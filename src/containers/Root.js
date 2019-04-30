@@ -34,7 +34,7 @@ export default () => {
 				<Links
 					url="https://play.google.com/store/apps/details?id=com.beyond.stars&hl=en_US"
 					title="Beyond Stars"
-					description="Helper to transform graphiql schema to parameters"
+					description="A visual novel puzzle game available in the playstore!"
 				/>
 				<Links
 					url="https://vija02.github.io/LD39"
