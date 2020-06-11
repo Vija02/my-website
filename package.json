@@ -1,26 +1,37 @@
 {
   "name": "my-website",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "gzip": "gzip -k ./build/static/js/*.js && gzip -k ./build/static/css/*.css",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "typecheck": "tsc",
+    "gzip": "gzip -k ./out/_next/chunks/*.js && gzip -k ./out/_next/runtime/*.js && gzip -k ./out/static/css/*.css"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@ant-design/charts": "^0.9.4",
+    "date-fns": "2.10.0",
+    "gray-matter": "4.0.2",
+    "lerp": "^1.0.3",
+    "next": "latest",
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-three-fiber": "^4.2.8",
+    "remark": "11.0.2",
+    "remark-html": "10.0.0",
+    "three": "^0.117.1",
+    "threejs-meshline": "^2.0.11",
+    "typescript": "^3.9.2"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "@types/node": "^14.0.1",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "babel-plugin-inline-react-svg": "^1.1.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "dotenv": "8.2.0"
+  }
 }

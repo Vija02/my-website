@@ -1,0 +1,40 @@
+.skillsContainer {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  /* height: 700px; */
+  padding-bottom: 90px;
+}
+
+.skillsContainer h1 {
+  padding-top: 20px;
+  font-size: 2.2em;
+  text-align: center;
+  z-index: 5;
+  color: #060607;
+  opacity: 0.85;
+  margin-bottom: 0px;
+}
+
+.skillsContainer p {
+  /* padding-top: 20px; */
+  /* font-size: 2.2em; */
+  text-align: center;
+  z-index: 5;
+  color: #060607;
+  opacity: 0.6;
+}
+
+.skillsBody {
+  display: flex;
+  flex-direction: row;
+}
+
+.skillRadarContainer {
+  flex: 1;
+  /* background-color: black; */
+  z-index: 100;
+  width: 50%;
+  /* height: 500px; */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}

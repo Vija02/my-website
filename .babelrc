@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-arrow-functions",
+    "inline-react-svg",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "src"
+        ]
+      }
+    ]
+  ]
+}
