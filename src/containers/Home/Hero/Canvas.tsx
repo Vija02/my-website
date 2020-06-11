@@ -2,7 +2,7 @@ import React, { useCallback, useRef } from 'react'
 import { Canvas } from 'react-three-fiber'
 
 import Sparks from './Sparks'
-import styles from './index.module.css'
+import styles from './Canvas.module.css'
 
 export default () => {
   const mouse = useRef([0, 0])

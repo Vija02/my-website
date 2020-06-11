@@ -1,0 +1,15 @@
+.canvas {
+  opacity: 0;
+  animation: show 4s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

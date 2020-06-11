@@ -2,11 +2,11 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  /* Default text stuff */
-  color: #EEEEEE;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   overflow: hidden;
+  /* Default text stuff */
+  color: #BBBBBB;
   line-height: 1.15;
+  letter-spacing: 1.4px;
 }
 
 /* Background */
@@ -38,23 +38,23 @@
 .leftContainer {
   flex: 1;
   padding-left: 10vw;
-  font-size: 16px;
 }
 
 .rightContainer {
   display: flex;
-  flex-direction: column;
+  /* Positioning */
   flex: 1;
-  /* display: flex; */
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  /* Spacing */
   margin-right: 10vw;
   padding-right: 1vw;
   padding-top: 20px;
   padding-bottom: 20px;
+  /* Looks */
   border-right: 0.1px solid rgba(255, 255, 255, 0.3);
-  align-items: flex-end;
-  text-align: right;
   z-index: 50;
-  font-size: 16px;
   /* Anim */
   opacity: 0;
   animation: show 0.7s;
@@ -63,12 +63,11 @@
 }
 
 .container h1 {
+  margin: 0px;
   font-family: 'Oswald', sans-serif;
   font-weight: bolder;
   font-size: 5em;
-  margin: 0px;
-  color: #EEEEEE;
-  /* margin-bottom: 20px; */
+  color: white;
   /* Anim */
   opacity: 0;
   animation: fadeInDown 1s;
@@ -78,10 +77,9 @@
 
 .container h2 {
   margin: 0px;
-  color: #BBBBBB;
-  font-family: Roboto;
   font-weight: bold;
   font-size: 2em;
+  /* Spacing */
   margin-top: 20px;
   margin-bottom: 20px;
   /* Anim */
@@ -93,8 +91,6 @@
 
 .container h3 {
   margin: 0px;
-  color: #BBBBBB;
-  font-family: Roboto;
   font-weight: normal;
   font-size: 1.2em;
   /* Anim */
@@ -106,8 +102,6 @@
 
 .container h4 {
   margin: 0px;
-  color: #BBBBBB;
-  font-family: Roboto;
   font-weight: lighter;
   font-size: 2em;
   text-transform: uppercase;
