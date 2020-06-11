@@ -6,9 +6,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
+    "export": "rm -rf out && next export && touch out/.nojekyll && touch out/CNAME && echo \"beta.michaelsalim.co.uk\" >> out/CNAME",
     "typecheck": "tsc",
-    "gzip": "gzip -k ./out/_next/chunks/*.js && gzip -k ./out/_next/runtime/*.js && gzip -k ./out/static/css/*.css"
+    "gzip": "gzip -k ./out/_next/static/chunks/*.js && gzip -k ./out/_next/static/runtime/*.js && gzip -k ./out/_next/static/css/*.css",
+    "gh-pages": "gh-pages -td out",
+    "deploy": "yarn build && yarn export && yarn gzip && yarn gh-pages"
   },
   "dependencies": {
     "@ant-design/charts": "^0.9.4",
@@ -32,6 +34,7 @@
     "@types/react-dom": "^16.9.8",
     "babel-plugin-inline-react-svg": "^1.1.1",
     "babel-plugin-module-resolver": "^4.0.0",
-    "dotenv": "8.2.0"
+    "dotenv": "8.2.0",
+    "gh-pages": "^3.0.0"
   }
 }
