@@ -6,6 +6,7 @@
   position: relative;
   padding-top: 140px;
   padding-bottom: 140px;
+  overflow: hidden;
 }
 
 .header {
@@ -13,6 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
+}
+
+.mainSvg {
+  width: 600px;
+  flex: 1;
 }
 
 .processes {
@@ -22,18 +29,56 @@
   z-index: 10;
 }
 
-.blockContainer h1 {
-  display: inline;
+.blockContainer {
+  margin-bottom: 20px;
+}
+
+.blockTopContainer {
+  display: flex;
+  align-items: center;
+}
+
+.blockTopContainer svg {
+  color: white;
+  width: 40px;
+  padding-left: 15px;
+}
+
+.blockTopContainer h1 {
   color: white;
   font-size: 2.2em;
   font-weight: bolder;
+  margin: 0px;
 }
 
 .blockContainer p {
-  /* display: inline; */
   color: white;
   opacity: 0.6;
-  max-width: 60%;
+  max-width: 500px;
+}
+
+.bobbingSvg {
+  color: white;
+  opacity: 0.06;
+  position: absolute;
+}
+
+.bulbSvg {
+  transform: rotateZ(-40deg) scale(3.5);
+  top: 130px;
+  left: 180px;
+}
+
+.presentationSvg {
+  transform: rotateZ(-5deg) scale(3.5);
+  top: 600px;
+  left: 550px;
+}
+
+.codeSvg {
+  transform: rotateZ(40deg) scale(5);
+  top: 100px;
+  right: 180px;
 }
 
 .bobAnim {
@@ -46,5 +91,40 @@
   }
   to {
     transform: translate3d(0px, 8px, 0px);
+  }
+}
+
+@media (max-width: 1150px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+  }
+  .mainSvg {
+    height: 35vw;
+    width: 100%;
+  }
+  .processes {
+    margin-top: 50px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .blockContainer p {
+    max-width: none;
+  }
+  .bulbSvg {
+    top: 10vw;
+    left: 10vw;
+    width: 4vw;
+  }
+  .presentationSvg {
+    top: 850px;
+    left: 50vw;
+    width: 30px;
+  }
+  .codeSvg {
+    top: 50vw;
+    right: 10vw;
+    width: 4vw;
   }
 }

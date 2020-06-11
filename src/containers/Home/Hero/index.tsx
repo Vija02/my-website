@@ -27,10 +27,10 @@ export default () => {
           <h4>Contact</h4>
         </div>
       </div>
-      <Canvas />
       <div className={styles.chevronContainer}>
         <ChevronDown />
       </div>
+      <Canvas />
     </>
   )
 }

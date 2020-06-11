@@ -8,8 +8,19 @@ import styles from './index.module.css'
 export default () => {
   return (
     <div className={styles.container}>
+      <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, zIndex: 0 }}>
+        <div className={styles.bobAnim} style={{ animationDelay: '0.2s' }} >
+          <BulbSvg className={`${styles.bobbingSvg} ${styles.bulbSvg}`} />
+        </div>
+        <div className={styles.bobAnim} style={{ animationDelay: '0.4s' }} >
+          <PresentationSvg className={`${styles.bobbingSvg} ${styles.presentationSvg}`} />
+        </div>
+        <div className={styles.bobAnim} style={{ animationDelay: '0.8s' }} >
+          <CodeSvg className={`${styles.bobbingSvg} ${styles.codeSvg}`} />
+        </div>
+      </div>
       <div className={styles.header}>
-        <ProgrammingSvg style={{ width: 600, flex: 1 }} />
+        <ProgrammingSvg className={styles.mainSvg} />
       </div>
       <div className={styles.processes}>
         <Block
@@ -28,17 +39,6 @@ export default () => {
           SvgElem={CodeSvg}
         />
       </div>
-      <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}>
-        <div className={styles.bobAnim} style={{ animationDelay: '0.2s' }} >
-          <BulbSvg style={{ color: 'white', opacity: 0.06, position: 'absolute', transform: 'rotateZ(-40deg) scale(3.5)', top: 130, left: 180 }} />
-        </div>
-        <div className={styles.bobAnim} style={{ animationDelay: '0.4s' }} >
-          <PresentationSvg style={{ color: 'white', opacity: 0.06, position: 'absolute', transform: 'rotateZ(-5deg) scale(3.5)', top: 600, left: 550 }} />
-        </div>
-        <div className={styles.bobAnim} style={{ animationDelay: '0.8s' }} >
-          <CodeSvg style={{ color: 'white', opacity: 0.06, position: 'absolute', transform: 'rotateZ(40deg) scale(5)', top: 100, right: 180 }} />
-        </div>
-      </div>
     </div>
   )
 }
@@ -52,8 +52,10 @@ type BlockProps = {
 const Block = ({ title, description, SvgElem }: BlockProps) => {
   return (
     <div className={styles.blockContainer}>
-      <h1>{title}</h1>
-      <SvgElem style={{ color: "white", width: 40, paddingLeft: 10, paddingTop: 15 }} />
+      <div className={styles.blockTopContainer}>
+        <h1>{title}</h1>
+        <SvgElem />
+      </div>
       <p>{description}</p>
     </div>
   )

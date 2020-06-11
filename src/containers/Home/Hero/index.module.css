@@ -7,17 +7,19 @@
   color: #BBBBBB;
   line-height: 1.15;
   letter-spacing: 1.4px;
+  background-color: black;
 }
 
 /* Background */
 
 .movingBgContainer {
   position: absolute;
+  height: 100vh;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: -100;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -43,7 +45,6 @@
 .rightContainer {
   display: flex;
   /* Positioning */
-  flex: 1;
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
@@ -158,9 +159,42 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  bottom: 30px;
-  z-index: -50;
+  top: 0px;
   /* Looks */
   color: white;
   opacity: 0.3;
+}
+
+.chevronContainer svg {
+  margin-bottom: 2vh;
+}
+
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .leftContainer {
+    margin-top: 15vh;
+    flex: 0;
+    padding-right: 10vw;
+  }
+  .rightContainer {
+    border: 0;
+    font-size: 0.7em;
+    /* Positioning */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80vw;
+    /* Spacing */
+    margin-top: 7vh;
+    padding-left: 10vw;
+  }
+  .rightContainer h4 {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.151);
+  }
 }
