@@ -99,6 +99,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
+    padding-bottom: 120px;
   }
   .mainSvg {
     height: 40vw;
@@ -118,7 +119,7 @@
     width: 4vw;
   }
   .presentationSvg {
-    top: 850px;
+    top: 800px;
     left: 50vw;
     width: 30px;
   }

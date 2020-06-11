@@ -1,12 +1,12 @@
-.skillsContainer {
+.container {
   position: relative;
   background-color: white;
   overflow: hidden;
-  /* height: 700px; */
   padding-bottom: 90px;
+  background-image: radial-gradient( 70% 70% at 50% 100%, #e8e8e8 0%, #fafafa 100%);
 }
 
-.skillsContainer h1 {
+.container h1 {
   padding-top: 20px;
   font-size: 2.2em;
   text-align: center;
@@ -16,25 +16,48 @@
   margin-bottom: 0px;
 }
 
-.skillsContainer p {
-  /* padding-top: 20px; */
-  /* font-size: 2.2em; */
+.container p {
   text-align: center;
   z-index: 5;
   color: #060607;
   opacity: 0.6;
+  margin-bottom: 40px;
 }
 
 .skillsBody {
   display: flex;
   flex-direction: row;
+  background-color: white;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.wordCloudContainer {
+  width: 50%;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .skillRadarContainer {
   flex: 1;
-  /* background-color: black; */
-  z-index: 100;
   width: 50%;
-  /* height: 500px; */
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1250px) {
+  .container{
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .skillsBody {
+    flex-direction: column;
+  }
+  .wordCloudContainer{
+    width: 100%;
+  }
+  .skillRadarContainer{
+    width: 100%;
+  }
 }

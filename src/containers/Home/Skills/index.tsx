@@ -38,18 +38,11 @@ const wordCloudConfig: Partial<WordCloudConfig> = {
   },
   shape: 'square',
   shuffle: false,
-  // backgroundColor: '#000',
-  // tooltip: { visible: false },
+  tooltip: { visible: false, items: [] },
   selected: -1,
-  // onWordCloudHover: hoverAction,
 }
 
 const radarConfig: RadarConfig = {
-  // title: {
-  //   visible: true,
-  //   text: '多组雷达图',
-  // },
-  // data,
   angleField: 'item',
   radiusField: 'score',
   seriesField: 'user',
@@ -76,25 +69,35 @@ const radarConfig: RadarConfig = {
     visible: true,
     position: 'bottom-center',
   },
+  tooltip: { visible: false },
+  color: ['lightblue'],
+  forceFit: true
 }
 
 
 export default () => {
   const { width } = useWindowSize()
 
-  const halfWidth = width ? width / 2 : 0
+  let calcWidth = 0
+
+  if (width) {
+    if (width <= 1250) {
+      calcWidth = width * 85 / 100
+    } else {
+      calcWidth = width ? width / 2 : 0
+    }
+  }
 
   return (
-    <div className={styles.skillsContainer}>
+    <div className={styles.container}>
       <h1>Over 150 Technologies Used..</h1>
       <p>and counting more each day!</p>
       <div className={styles.skillsBody}>
-
-        <div style={{ zIndex: 0, width: '50%' }}>
+        <div className={styles.wordCloudContainer}>
           <WordCloud
             {...wordCloudConfig}
             data={wordCloudData.map((x, i) => ({ id: i, word: x.name, weight: x.value }))}
-            width={halfWidth}
+            width={calcWidth}
             height={600}
           />
         </div>
@@ -102,10 +105,7 @@ export default () => {
           <Radar
             {...radarConfig}
             data={radarData}
-            tooltip={{ visible: false }}
-            color={['lightblue']}
-            forceFit={true}
-            width={halfWidth}
+            width={calcWidth}
             height={600}
           />
         </div>
