@@ -98,16 +98,16 @@
   .container {
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 80px;
   }
   .mainSvg {
-    height: 35vw;
+    height: 40vw;
     width: 100%;
   }
   .processes {
     margin-top: 50px;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
   .blockContainer p {
     max-width: none;
@@ -123,7 +123,7 @@
     width: 30px;
   }
   .codeSvg {
-    top: 50vw;
+    top: 55vw;
     right: 10vw;
     width: 4vw;
   }

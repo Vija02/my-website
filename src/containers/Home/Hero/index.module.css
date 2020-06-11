@@ -177,7 +177,8 @@
   .leftContainer {
     margin-top: 15vh;
     flex: 0;
-    padding-right: 10vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
   .rightContainer {
     border: 0;
@@ -187,10 +188,11 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 80vw;
+    width: 90vw;
     /* Spacing */
     margin-top: 7vh;
-    padding-left: 10vw;
+    margin-right: 0px;
+    padding-left: 5vw;
   }
   .rightContainer h4 {
     margin-right: 20px;
