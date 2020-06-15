@@ -90,8 +90,8 @@ export default () => {
 
   return (
     <div className={styles.container}>
-      <h1>Over 150 Technologies Used..</h1>
-      <p>and counting more each day!</p>
+      <h1>SKILL SET</h1>
+      <p>Over 150 Technologies used and counting more each day!</p>
       <div className={styles.skillsBody}>
         <div className={styles.wordCloudContainer}>
           <WordCloud

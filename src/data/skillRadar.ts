@@ -1,42 +1,26 @@
 export default [
   {
+    item: 'Frontend',
+    score: 100,
+  },
+  {
     item: 'Design',
-    score: 70,
-  },
-  {
-    item: 'Development',
-    score: 60,
-  },
-  {
-    item: 'Marketing',
-    score: 60,
-  },
-  {
-    item: 'Users',
-    score: 40,
-  },
-  {
-    item: 'Test',
-    score: 60,
-  },
-  {
-    item: 'Language',
-    score: 70,
-  },
-  {
-    item: 'Technology',
     score: 50,
   },
   {
-    item: 'Support',
-    score: 30,
+    item: 'DevOps',
+    score: 80,
   },
   {
-    item: 'Sales',
+    item: 'Backend',
+    score: 70,
+  },
+  {
+    item: 'Testing',
     score: 60,
   },
   {
-    item: 'UX',
-    score: 50,
+    item: 'UI / UX',
+    score: 70,
   },
 ]
