@@ -4,12 +4,13 @@ import dynamic from 'next/dynamic'
 import Meta from 'containers/Meta'
 import HomeHero from 'containers/Home/Hero'
 import HomeProcess from 'containers/Home/Process'
-// import HomeSkills from 'containers/Home/Skills'
+import HomeFooter from 'containers/Home/Footer'
 
 const HomeSkills = dynamic(
   () => import('containers/Home/Skills'),
   { ssr: false }
 )
+const HomeContact = dynamic(() => import('containers/Home/Contact'))
 
 function HomeIndex() {
   return (
@@ -23,6 +24,8 @@ function HomeIndex() {
         <HomeHero />
         <HomeProcess />
         <HomeSkills />
+        <HomeContact />
+        <HomeFooter />
       </div>
     </>
   )
