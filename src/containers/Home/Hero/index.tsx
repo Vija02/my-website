@@ -3,6 +3,8 @@ import React from "react"
 import Canvas from './Canvas'
 
 import ChevronDown from "assets/chevron-down.svg"
+import Linkedin from "assets/logo/linkedin-logo.svg"
+import Github from "assets/logo/github-logo.svg"
 
 import styles from './index.module.css'
 
@@ -25,6 +27,14 @@ export default () => {
           <h4>Blog</h4>
           <h4>Dev Notes</h4>
           <h4>Contact</h4>
+          <div className={styles.socialMedia}>
+            <a href="https://www.linkedin.com/in/michael-salim/" target="_blank" rel="noopener noreferrer">
+              <Linkedin />
+            </a>
+            <a href="https://github.com/vija02/" target="_blank" rel="noopener noreferrer">
+              <Github />
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.chevronContainer}>
