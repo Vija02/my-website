@@ -1,3 +1,17 @@
+.absoluteContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Hardcoded height */
+  height: 370px;
+  background: #ccc;
+}
+
+.heightPad {
+  margin-bottom: 370px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
