@@ -41,9 +41,13 @@
   background-color: #43b581;
   border: 1px solid #43b581;
   border-radius: 2px;
-  padding: 4px 15px;
+  padding: 10px 15px;
   color: white;
   text-decoration: none;
+}
+
+.form a:hover {
+  background-color: #5fd6a1;
 }
 
 .wave {
