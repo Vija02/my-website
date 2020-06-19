@@ -79,12 +79,15 @@ export default () => {
   const { width } = useWindowSize()
 
   let calcWidth = 0
+  let calcHeight = 0
 
   if (width) {
     if (width <= 1250) {
       calcWidth = width * 85 / 100
+      calcHeight = calcWidth
     } else {
       calcWidth = width ? width / 2 : 0
+      calcHeight = 600
     }
   }
 
@@ -98,7 +101,7 @@ export default () => {
             {...wordCloudConfig}
             data={wordCloudData.map((x, i) => ({ id: i, word: x.name, weight: x.value }))}
             width={calcWidth}
-            height={600}
+            height={calcHeight}
           />
         </div>
         <div className={styles.skillRadarContainer}>
@@ -106,7 +109,7 @@ export default () => {
             {...radarConfig}
             data={radarData}
             width={calcWidth}
-            height={600}
+            height={calcHeight}
           />
         </div>
       </div>

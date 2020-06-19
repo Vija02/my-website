@@ -16,6 +16,8 @@
 }
 
 .subheader {
+  padding-left: 5vw;
+  padding-right: 5vw;
   opacity: 0.8;
 }
 
@@ -63,4 +65,16 @@
 .container form button:hover {
   cursor: pointer;
   background-color: #5fd6a1;
+}
+
+@media (max-width: 850px) {
+  .container {
+    padding-top: 50px;
+  }
+
+  .container form {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    max-width: 90vw;
+  }
 }
