@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 
 import Canvas from './Canvas'
 
@@ -23,10 +24,10 @@ export default () => {
           <h3>Simply <i>imagine</i> and consider it done.</h3>
         </div>
         <div className={styles.rightContainer}>
-          <h4>About</h4>
-          <h4>Blog</h4>
-          <h4>Dev Notes</h4>
-          <h4>Contact</h4>
+          <a>About</a>
+          <a>Blog</a>
+          <a>Dev Notes</a>
+          <Link href="/contact-me"><a>Contact</a></Link>
           <div className={styles.socialMedia}>
             <a href="https://www.linkedin.com/in/michael-salim/" target="_blank" rel="noopener noreferrer">
               <Linkedin />

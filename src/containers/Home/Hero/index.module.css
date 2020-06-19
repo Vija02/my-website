@@ -101,15 +101,17 @@
   animation-fill-mode: forwards;
 }
 
-.container h4 {
+.container a {
   margin: 0px;
   font-weight: lighter;
   font-size: 2em;
   text-transform: uppercase;
   z-index: 50;
+  color: inherit;
+  text-decoration: none;
 }
 
-.container h4:hover {
+.container a:hover {
   font-weight: 200;
   color: white;
   cursor: pointer;
@@ -202,7 +204,7 @@
     margin-right: 0px;
     padding-left: 5vw;
   }
-  .rightContainer h4 {
+  .rightContainer a {
     margin-right: 20px;
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.151);
