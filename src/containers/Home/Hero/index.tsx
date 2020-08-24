@@ -24,7 +24,7 @@ export default () => {
           <h3>Simply <i>imagine</i> and consider it done.</h3>
         </div>
         <div className={styles.rightContainer}>
-          <a>About</a>
+          <Link href="/about-me"><a>About</a></Link>
           <a>Blog</a>
           <a>Dev Notes</a>
           <Link href="/contact-me"><a>Contact</a></Link>
