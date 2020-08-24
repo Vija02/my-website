@@ -1,45 +1,43 @@
-import ProgrammingSvg from "assets/programming.svg"
-import BulbSvg from "assets/bulb.svg"
-import PresentationSvg from "assets/presentation.svg"
-import CodeSvg from "assets/code.svg"
+import AnalyseSVG from "assets/analyse.svg"
+import DiscoverSVG from "assets/discover.svg"
+import DesignSVG from "assets/design.svg"
+import DevelopSVG from "assets/develop.svg"
+
+import useWindowSize from "helper/useWindowSize"
 
 import styles from './index.module.css'
 
 export default () => {
+  const { width } = useWindowSize()
   return (
-    <div className={styles.container}>
-      <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, zIndex: 0 }}>
-        <div className={styles.bobAnim} style={{ animationDelay: '0.2s' }} >
-          <BulbSvg className={`${styles.bobbingSvg} ${styles.bulbSvg}`} />
-        </div>
-        <div className={styles.bobAnim} style={{ animationDelay: '0.4s' }} >
-          <PresentationSvg className={`${styles.bobbingSvg} ${styles.presentationSvg}`} />
-        </div>
-        <div className={styles.bobAnim} style={{ animationDelay: '0.8s' }} >
-          <CodeSvg className={`${styles.bobbingSvg} ${styles.codeSvg}`} />
+    <>
+      <div className={styles.container}>
+        <div className={styles.body}>
+          <h1 className={styles.title}>
+            PROCESS
+          </h1>
+          <AnalyseSVG className={styles.mainSvg} />
+          <div className={styles.processes}>
+            <Block
+              title="Discover"
+              description="All project starts with an idea. Here we define your goals, needs and constraints. This will be the cornerstone of our decision and plans moving forward."
+              SvgElem={DiscoverSVG}
+            />
+            <Block
+              title="Design"
+              description="A product will only be as good as its design. We carefully craft a plan that will create robust product in a satisfactory amount of time without compromises."
+              SvgElem={() => <DesignSVG style={{ marginLeft: -70 }} />}
+              left={width ? (width < 800) : false}
+            />
+            <Block
+              title="Develop"
+              description="With 7 years of experience building products, you can leave this task fully on me. No nonsense and straight to the point. Together, we can make your imagination reality."
+              SvgElem={DevelopSVG}
+            />
+          </div>
         </div>
       </div>
-      <div className={styles.header}>
-        <ProgrammingSvg className={styles.mainSvg} />
-      </div>
-      <div className={styles.processes}>
-        <Block
-          title="Discover"
-          description="All project starts with an idea. Here we define your goals, needs and constraints. This will be the cornerstone of our decision and plans moving forward."
-          SvgElem={BulbSvg}
-        />
-        <Block
-          title="Design"
-          description="A product will only be as good as its design. We carefully craft a plan that will create robust product in a satisfactory amount of time without compromises."
-          SvgElem={PresentationSvg}
-        />
-        <Block
-          title="Develop"
-          description="With 7 years of experience building products, you can leave this task fully on me. No nonsense and straight to the point. Together, we can make your imagination reality."
-          SvgElem={CodeSvg}
-        />
-      </div>
-    </div>
+    </>
   )
 }
 
@@ -47,16 +45,18 @@ type BlockProps = {
   title: string
   description: string
   SvgElem: any
+  left?: boolean
 }
 
-const Block = ({ title, description, SvgElem }: BlockProps) => {
+const Block = ({ title, description, SvgElem, left = true }: BlockProps) => {
   return (
     <div className={styles.blockContainer}>
-      <div className={styles.blockTopContainer}>
+      {left && <SvgElem />}
+      <div className={styles.blockRightContainer}>
         <h1>{title}</h1>
-        <SvgElem />
+        <p>{description}</p>
       </div>
-      <p>{description}</p>
+      {!left && <SvgElem />}
     </div>
   )
 }

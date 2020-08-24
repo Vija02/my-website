@@ -36,20 +36,6 @@
   font-weight: 400;
 }
 
-.form a {
-  margin-top: 20px;
-  background-color: #43b581;
-  border: 1px solid #43b581;
-  border-radius: 2px;
-  padding: 10px 15px;
-  color: white;
-  text-decoration: none;
-}
-
-.form a:hover {
-  background-color: #5fd6a1;
-}
-
 .wave {
   position: absolute;
   bottom: 0px;

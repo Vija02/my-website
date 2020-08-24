@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Autosuggest from 'react-autosuggest'
 import fuzzy from 'fuzzy'
 
+import Button from "components/Button"
+
 import Waves from 'assets/waves.svg'
 
 import styles from './index.module.css'
@@ -42,10 +44,10 @@ export default () => {
           }}
           theme={theme}
         />
-        <Link href={{ pathname: '/contact-me', query: { about: text } }}>
-          <a>
+        <Link href={{ pathname: '/contact-me', query: { about: text } }} passHref>
+          <Button>
             Contact
-          </a>
+          </Button>
         </Link>
       </div>
       <Waves className={styles.wave} />
