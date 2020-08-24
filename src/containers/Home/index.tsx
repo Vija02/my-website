@@ -1,14 +1,14 @@
 import HomeHero from './Hero'
+import HomePitch from './Pitch'
 import HomeProcess from './Process'
-import HomeSkills from './Skills'
 import HomeContact from './Contact'
 
 export default () => {
   return (
     <>
       <HomeHero />
+      <HomePitch />
       <HomeProcess />
-      <HomeSkills />
       <HomeContact />
     </>
   )
