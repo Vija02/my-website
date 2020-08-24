@@ -25,8 +25,8 @@ export default () => {
         </div>
         <div className={styles.rightContainer}>
           <Link href="/about-me"><a>About</a></Link>
-          <a>Blog</a>
-          <a>Dev Notes</a>
+          {/* <a>Blog</a> */}
+          <Link href="/dev-notes"><a>Dev Notes</a></Link>
           <Link href="/contact-me"><a>Contact</a></Link>
           <div className={styles.socialMedia}>
             <a href="https://www.linkedin.com/in/michael-salim/" target="_blank" rel="noopener noreferrer">

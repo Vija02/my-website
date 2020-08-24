@@ -14,7 +14,7 @@ export default () => {
       <div className={styles.absoluteContainer}>
         <div className={styles.container}>
           <Link href="/"><a>Home</a></Link>
-          <Link href="/blog"><a>Blog</a></Link>
+          <Link href="/about-me"><a>About</a></Link>
           <Link href="/dev-notes"><a>Dev Notes</a></Link>
           <Link href="/contact-me"><a>Contact</a></Link>
           <div className={styles.socialMedia}>
@@ -27,7 +27,7 @@ export default () => {
           </div>
           <div className={styles.bottom}>
             <Favicon />
-            <span className={styles.verse}>- John 3:16 -</span>
+            <span className={styles.verse}>— John 3:16 —</span>
             <span>
               © {new Date().getFullYear()} Michael Salim
           </span>
