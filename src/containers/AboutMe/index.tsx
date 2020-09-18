@@ -4,6 +4,8 @@ import StandardHeader from 'components/StandardHeader'
 import Footer from 'components/Footer'
 import LineBreak from 'components/LineBreak'
 
+import MusicSvg from 'assets/music.svg'
+
 import styles from './index.module.css'
 import projectsStyles from './projects.module.css'
 
@@ -57,6 +59,16 @@ export default () => {
           />
         </div>
         <LineBreak />
+
+        <div className={styles.musicContainer}>
+          <MusicSvg />
+          <div>
+            <p>Outside software, I play <b>musical instruments</b> and <b>exploring cool things</b></p>
+            <p>I am exploring <b>electrical engineering</b> with the goal of making a <b>fully smart house</b></p>
+            <p><b>Contact me</b> if you are excited to do something awesome together!</p>
+          </div>
+        </div>
+
         <Footer />
       </div>
     </>

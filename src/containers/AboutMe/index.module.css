@@ -61,6 +61,22 @@
   font-size: 3rem;
 }
 
+.musicContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.musicContainer p {
+  max-width: 70vw;
+  opacity: 0.95;
+  line-height: 2;
+  font-size: 1.1rem;
+}
+
 @media (max-width: 900px) {
   .container {
     padding-right: 5vw;
@@ -89,5 +105,22 @@
   }
   .headerTextContainer {
     width: initial;
+  }
+}
+
+@media (min-width: 901px) {
+  .musicContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+  }
+  .musicContainer svg {
+    margin-left: -80px;
+    margin-right: -50px;
+    max-width: min(650px, 60%);
+  }
+  .musicContainer p {
+    max-width: 450px;
   }
 }
