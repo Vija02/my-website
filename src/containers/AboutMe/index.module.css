@@ -39,10 +39,11 @@
 .container h3 {
   margin-top: 60px;
   font-weight: normal;
+  opacity: 0.85;
 }
 
-.container u {
-  text-underline-position: under;
+.container a {
+  color: white;
   text-decoration-color: #eb6558;
 }
 
@@ -67,7 +68,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
 }
 
 .musicContainer p {
@@ -75,6 +76,44 @@
   opacity: 0.95;
   line-height: 2;
   font-size: 1.1rem;
+}
+
+.container b {
+  color: #eb6558;
+  font-weight: normal;
+}
+
+.christianContainer {
+  margin-top: -100px;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  background-image: url("/assets/img/sea.png");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.christianContainer p {
+  color: white;
+  max-width: 70vw;
+  opacity: 0.95;
+  line-height: 2;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.christianContainer p:last-child {
+  margin-top: 60px;
+}
+
+.christianContainer b {
+  color: #eb6558;
 }
 
 @media (max-width: 900px) {
@@ -86,6 +125,7 @@
     justify-content: center;
     width: initial;
     font-size: 0.8rem;
+    padding-right: 0;
   }
   .container h2 {
     font-size: 2.5vh;
@@ -122,5 +162,16 @@
   }
   .musicContainer p {
     max-width: 450px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .christianContainer {
+    align-items: flex-start;
+  }
+  .christianContainer p {
+    max-width: 500px;
+    margin-left: 55vw;
+    margin-right: 40px;
   }
 }
