@@ -1,0 +1,1 @@
+{"pageProps":{"category":"CLI","notes":"Caddy","sectionsData":[{"sectionName":"Simple File Server","content":"<pre><code class=\"hljs language-bash\">caddy file-server --listen :2015</code></pre>\n"}]},"__N_SSG":true}

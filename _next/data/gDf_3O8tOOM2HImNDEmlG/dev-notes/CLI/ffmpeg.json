@@ -1,0 +1,1 @@
+{"pageProps":{"category":"CLI","notes":"ffmpeg","sectionsData":[{"sectionName":"Quick Convert or Compress","content":"<pre><code class=\"hljs language-bash\">ffmpeg -i input.mkv output.mp4</code></pre>\n"}]},"__N_SSG":true}
