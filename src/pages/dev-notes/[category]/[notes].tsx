@@ -15,9 +15,11 @@ import { getNotesMarkdownList, getNotesData, getNotesList } from "helper/notes"
 import javascript from "highlight.js/lib/languages/javascript"
 import typescript from "highlight.js/lib/languages/typescript"
 import bash from "highlight.js/lib/languages/bash"
+import css from "highlight.js/lib/languages/css"
 hljs.registerLanguage("javascript", javascript)
 hljs.registerLanguage("typescript", typescript)
 hljs.registerLanguage("bash", bash)
+hljs.registerLanguage("css", css)
 
 export type SectionsData = {
   sectionName: string
