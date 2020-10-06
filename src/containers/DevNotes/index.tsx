@@ -1,15 +1,15 @@
 import React from "react"
+import Link from "next/link"
 
 import StandardHeader from "components/StandardHeader"
 import Footer from "components/Footer"
 import LineBreak from "components/LineBreak"
 
+import { NotesList } from "pages/dev-notes"
+
 import NotesSvg from "assets/note_taking.svg"
 
 import styles from "./index.module.css"
-
-import { NotesList } from "pages/dev-notes"
-import Link from "next/link"
 
 type PropTypes = {
   notesList: NotesList

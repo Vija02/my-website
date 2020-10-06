@@ -25,3 +25,16 @@ export const getNotesList = (): NotesList => {
 
   return notesList
 }
+
+export const getNotesMarkdownList = (category: string, note: string) => {
+  return fs.readdirSync(
+    path.join(process.cwd(), `src/data/devnotes/${category}/${note}`),
+  )
+}
+
+export const getNotesData = (category: string, note: string, md: string) => {
+  return fs.readFileSync(
+    path.join(process.cwd(), `src/data/devnotes/${category}/${note}/${md}`),
+    "utf8",
+  )
+}

@@ -1,0 +1,14 @@
+.markdown {
+  background-color: #2f3541;
+  padding: 10px 10px 1px 10px;
+}
+
+.markdown pre {
+  text-align: left;
+  margin-top: 0;
+}
+
+.markdown *:first-child {
+  padding-top: 0px;
+  margin-top: 0px;
+}
