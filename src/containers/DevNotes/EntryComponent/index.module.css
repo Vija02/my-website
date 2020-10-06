@@ -27,6 +27,10 @@
   opacity: 0.8;
 }
 
+.sectionContainer>*+* {
+  margin-top: 10px;
+}
+
 .sectionHeader {
   background-color: #1f2227;
   border-bottom: 1px solid black;

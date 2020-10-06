@@ -27,15 +27,17 @@ export default ({ category, notes, sectionsData }: PropTypes) => {
           <h1>{notes}</h1>
           <h2>{category}</h2>
         </div>
-        {sectionsData.map((section) => (
-          <div>
-            <div className={styles.sectionHeader}>{section.sectionName}</div>
-            <div
-              className={markdownStyles["markdown"]}
-              dangerouslySetInnerHTML={{ __html: section.content }}
-            />
-          </div>
-        ))}
+        <div className={styles.sectionContainer}>
+          {sectionsData.map((section) => (
+            <div>
+              <div className={styles.sectionHeader}>{section.sectionName}</div>
+              <div
+                className={markdownStyles["markdown"]}
+                dangerouslySetInnerHTML={{ __html: section.content }}
+              />
+            </div>
+          ))}
+        </div>
         {sectionsData.length === 0 && (
           <div className={styles.empty}>
             <h2>Whoops, nothing here yet!</h2>
