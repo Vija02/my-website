@@ -1,12 +1,13 @@
-import { AppProps } from 'next/app'
+import { AppProps } from "next/app"
 import Router from "next/router"
 import NProgress from "nprogress"
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer, toast } from "react-toastify"
 
-import 'normalize.css'
+import "normalize.css"
 import "nprogress/nprogress.css"
-import 'containers/index.css'
-import 'react-toastify/dist/ReactToastify.css'
+import "containers/index.css"
+import "react-toastify/dist/ReactToastify.css"
+import "highlight.js/styles/atom-one-dark.css"
 
 NProgress.configure({
   showSpinner: false,
@@ -30,7 +31,6 @@ if (typeof window !== "undefined") {
     }
   })
 }
-
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
