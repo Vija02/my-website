@@ -13,7 +13,6 @@
     "deploy": "yarn build && yarn export && yarn gzip && yarn gh-pages"
   },
   "dependencies": {
-    "@ant-design/charts": "^0.9.4",
     "@types/nprogress": "^0.2.0",
     "@types/react-autosuggest": "^9.3.14",
     "date-fns": "2.10.0",
