@@ -1,1 +1,0 @@
-{"pageProps":{"category":"CLI","notes":"ImageMagick","sectionsData":[{"sectionName":"Crop Image","content":"<p>200 width</p>\n<pre><code class=\"hljs language-bash\">convert -geometry 200x original.png new.png</code></pre>\n"}]},"__N_SSG":true}
