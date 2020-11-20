@@ -3,3 +3,4 @@ https://www.archlinux.org/mirrorlist/?country=GB
 ```bash
 sudo nano /etc/pacman.d/mirrorlist
 ```
+Useful tool: `pacui`
