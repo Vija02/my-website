@@ -1,13 +1,16 @@
 import React from "react"
 import Link from "next/link"
-
-import Canvas from './Canvas'
+import dynamic from "next/dynamic"
 
 import ChevronDown from "assets/chevron-down.svg"
 import Linkedin from "assets/logo/linkedin-logo.svg"
 import Github from "assets/logo/github-logo.svg"
 
 import styles from './index.module.css'
+
+const Canvas = dynamic(() => import("./Canvas"), {
+  ssr: false,
+})
 
 export default () => {
   return (

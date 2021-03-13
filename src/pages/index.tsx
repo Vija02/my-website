@@ -1,18 +1,7 @@
-import dynamic from 'next/dynamic'
-
 import Meta from 'containers/Meta'
+import Home from 'containers/Home'
 
-import FullScreenLoading from 'components/FullScreenLoading'
 import Footer from 'components/Footer'
-
-const Home = dynamic(
-  () => import('containers/Home'),
-  {
-    ssr: false, loading: () => (
-      <FullScreenLoading />
-    )
-  }
-)
 
 function HomeIndex() {
   return (
