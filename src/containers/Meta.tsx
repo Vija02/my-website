@@ -5,10 +5,17 @@ type PropTypes = {
   description?: string
 }
 
-export default ({ title, description = "My Personal Website containing all sorts of information" }: PropTypes) => {
+export default ({
+  title,
+  description = "Homepage of Michael Salim - Full Stack Freelancer. Make your project a reality with a few easy steps.",
+}: PropTypes) => {
   return (
     <Head>
-      <title>{!!title ? `${title} - Michael Salim` : 'Michael Salim'}</title>
+      <title>
+        {!!title
+          ? `${title} - Michael Salim | Full Stack Freelancer`
+          : "Michael Salim | Full Stack Freelancer"}
+      </title>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -37,10 +44,8 @@ export default ({ title, description = "My Personal Website containing all sorts
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={description}
-      />
+      <meta name="description" content={description} />
+      <meta name="author" content="Michael Salim" />
       <meta property="og:image" content="/assets/svg/icon.svg" />
     </Head>
   )
