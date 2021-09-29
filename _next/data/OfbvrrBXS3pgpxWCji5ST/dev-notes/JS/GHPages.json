@@ -1,0 +1,1 @@
+{"pageProps":{"category":"JS","notes":"GHPages","sectionsData":[{"sectionName":"Publish To Build Branch","content":"<p>Useful for building forked libs and using them directly without npm</p>\n<pre><code class=\"hljs language-bash\">npx gh-pages --dist . -b build -s <span class=\"hljs-string\">\"{dist/**/*,package.json}\"</span></code></pre>\n"}]},"__N_SSG":true}
