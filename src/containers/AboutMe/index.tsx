@@ -36,6 +36,12 @@ export default () => {
         </div>
         <div>
           <ProjectEntry
+            title="AIRFINITY"
+            image="/assets/img/airfinity-isometric.png"
+            link="https://airfinity.com"
+            description="The world’s leading COVID-19 platform. Providing access to predictive analytics and insights solution that is saving lives"
+          />
+          <ProjectEntry
             title="CIMLOGIC"
             image="/assets/img/cimlogic-isometric.png"
             link="https://cimlogic.co.uk"

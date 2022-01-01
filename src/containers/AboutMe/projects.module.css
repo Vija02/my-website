@@ -47,7 +47,7 @@
     justify-content: center;
     gap: 5vw;
   }
-  .projectEntry:nth-child(odd) {
+  .projectEntry:nth-child(even) {
     flex-direction: row-reverse;
   }
   .projectEntry img {
