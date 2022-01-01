@@ -62,7 +62,7 @@ export default () => {
           <ProjectEntry
             title="BEYOND STARS"
             image="/assets/img/beyondstars-isometric.png"
-            link="https://michaelsalim.co.uk/stars"
+            link=""
             description="A Visual novel puzzle playable teaser available in Play Store. Explore Alex's story and help him achieve his dream"
           />
         </div>
