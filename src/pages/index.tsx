@@ -6,7 +6,7 @@ import Footer from 'components/Footer'
 function HomeIndex() {
   return (
     <>
-      <Meta title="Home" />
+      <Meta />
       <div>
         <Home />
       </div>
