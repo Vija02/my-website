@@ -1,0 +1,177 @@
+---
+title: Can you re-create this web component?
+description: Are you a confident front-end developer? Try to re-create this pagination component from GitHub. In this article, I talk about how seemingly simple task can take a long time without proper evaluation.
+createdAt: 2022-01-17
+---
+
+**Here's the challenge:**
+Re-create this pagination component from GitHub
+
+![github_pagination](/assets/blog/can-you-re-create-this/github_pagination.png)
+
+Some problems looks hard but turns out to be easy. Then you look at one that seem easy but it turns out to be a hard problem. This is one of the latter.
+It's definitely not an ordeal, but it probably took me a good hour when I originally estimated to finish this within a few minutes.
+
+Now, before you say _"This is easy! You're just a bad programmer"_, **I encourage you to try to re-create it!**
+
+Go to [this page](https://github.com/microsoft/vscode/issues) and scroll to the very bottom for reference. Make sure you test various scenarios. Here's some:
+
+1. Go to the first page
+2. Last page
+3. In the middle of the page
+4. At page 2-6
+5. When there's not many pages (Eg: Total of 10 pages)
+6. On lower screen resolution (mobile)
+
+Need more time? Don't worry I'll wait.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Ok, let's explore the requirements. I hope this is detailed enough to make you wish you had these on _$DAY_JOB_!
+
+## **Exploring the Requirements**
+
+There's 2 crucial points for this component:
+
+- Able to navigate to first and last page
+- Able to navigate to the adjacent pages easily
+
+On its own, it's not a big deal. But once you account for responsive design, it's not as straightforward.
+So let's divide it per screen size.
+
+### 1. Mobile
+
+When we don't have enough space to put anything, GitHub simply shows 2 buttons.
+
+![github_pagination_sm](/assets/blog/can-you-re-create-this/github_pagination_sm.png)
+
+Simple, let's move on to the next size.
+
+### 2. Tablet
+
+Here's where it starts to get tricky.
+When you're on the first page, show the first and the last page - along with the "Previous" and "Next" button.
+
+![github_pagination_md_1](/assets/blog/can-you-re-create-this/github_pagination_md_1.png)
+
+But if we're on a different page then we'll want to indicate that.
+
+![github_pagination_md_2](/assets/blog/can-you-re-create-this/github_pagination_md_2.png)
+
+What if we're somewhere on the middle? Notice the difference? GitHub doesn't show dots between 1 and 3 above. However, they show dots between 1 and 7.
+
+![github_pagination_md_3](/assets/blog/can-you-re-create-this/github_pagination_md_3.png)
+
+### 3. Desktop
+
+Starting from the first page:
+
+![github_pagination_lg_1](/assets/blog/can-you-re-create-this/github_pagination_lg_1.png)
+
+Notice that the first five pages and the last two are shown.
+
+Let's try page 5:
+
+![github_pagination_lg_2](/assets/blog/can-you-re-create-this/github_pagination_lg_2.png)
+
+Page 1 to 7 is now shown. That makes sense because the 2 pages around our current page seems to be shown.
+Combining the fact that the first five pages are shown, this adds up.
+
+![github_pagination_lg_3](/assets/blog/can-you-re-create-this/github_pagination_lg_3.png)
+
+Sure enough, we follow the same trend.
+
+Now, let's move to page 7.
+
+![github_pagination_lg_4](/assets/blog/can-you-re-create-this/github_pagination_lg_4.png)
+
+As expected, now we've lost page 3-4. Page 5-9 is shown because we're on page 7.
+
+---
+
+**Some things not mentioned:**
+
+- Previous and Next button becomes disabled when no page to paginate.
+- It needs to handle any number of pages.
+
+Here's 2 additional cases to refer to:
+
+<div style={{ textAlign: "center" }}>Tablet size</div>
+
+![github_pagination_ex_1](/assets/blog/can-you-re-create-this/github_pagination_ex_1.png)
+
+<div style={{ textAlign: "center" }}>Desktop size</div>
+
+![github_pagination_ex_2](/assets/blog/can-you-re-create-this/github_pagination_ex_2.png)
+
+<br />
+<br />
+<br />
+
+Didn't expect that many requirement did ya? Maybe you did — I for sure didn't.
+
+---
+
+**So why did this took me much longer than expected to make?**
+
+### 1. Unclear Scope
+
+If you tried to re-create this component without looking at the requirements I laid out, you might be surprised at how many cases there are to handle.
+Unclear scope is a big issue that leads to mismatch in development time and expectation. Most of you probably had an experience of being asked <i>"How long do you think this will take?"</i>.
+
+And if you've experienced enough of those, you'll know to estimate a number and [multiply that by at least 1.5](https://erikbern.com/2019/04/15/why-software-projects-take-longer-than-you-think-a-statistical-model.html). So for a feature that you think might take a week, you'll say one and a half week — Maybe even two!
+
+The more detailed a piece of work is, the better you'll be able to estimate. A vague task like <i>"Re-create X feature"</i> is bound to go beyond your estimate no matter how simple it is.
+
+### 2. The amount of different cases to handle
+
+<i>"Less is better"</i> — Somebody
+
+When I started on this component, my mindset was to create the component with as little parts as possible. Many developers like to shorten and use <i>"smart"</i> ways to code as they get better at programming.
+This can be syntactic sugar, clever tricks or little known facts of a certain language. If you know [Functional Programming](https://anssipiirainen.com/post/fp-tricks-for-simple-code/), you know what I mean!
+
+At some point in my career, I did similar. I had fun figuring out how to write something clever. But that often increases the complexity of your code.
+
+Most importantly, <b>`less !== better`</b>.
+
+Simple is better. And less often times does not equal to simple.
+
+![If and loops](/assets/blog/can-you-re-create-this/if-and-loops.jpg)
+
+Source: [Twitter](https://twitter.com/nice_byte/status/1466940940229046273)
+
+Some of you might be tempted to create a single elegant function to handle all the cases. In this example however, it might be much simpler and readable to handle each case on its own <i>if</i> statement.
+
+Although if you manage to solve this problem elegantly, let me know through [e-mail](mailto:hi@michaelsalim.co.uk) or [twitter](https://twitter.com/IamMichaelSalim)! I'd love to see it.
+
+## End result
+
+I originally set out to do this for [Recall](https://recalllab.com)'s task explorer page. Here's how it looks in the end. Not too bad!
+
+<video
+  autoPlay
+  loop
+  muted
+  style={{ width: "100%", maxWidth: 480, display: "flex", margin: "auto" }}
+>
+  <source src="/assets/blog/can-you-re-create-this/demo.mp4" type="video/mp4" />
+  Your browser does not support HTML video.
+</video>
+
+Final thought: This component might be a good test for a technical interview. What do you think?
