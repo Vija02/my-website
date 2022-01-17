@@ -11,3 +11,25 @@ u {
   text-underline-position: under;
   text-decoration-color: #eb6558;
 }
+
+.mailchimp {
+  margin: auto;
+}
+
+#mce-EMAIL {
+  width: 100%;
+  padding: 5px;
+}
+
+#mc-embedded-subscribe {
+  background-color: transparent;
+  border: 1px solid rgb(61, 58, 58);
+  color: white;
+  padding: 8px;
+  margin-top: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+#mc-embedded-subscribe:hover {
+  background-color: rgb(36, 36, 36);
+}
