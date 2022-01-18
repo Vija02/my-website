@@ -20,6 +20,9 @@ export default () => {
           <Link href="/about-me">
             <a>About</a>
           </Link>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
           <Link href="/dev-notes">
             <a>Dev Notes</a>
           </Link>

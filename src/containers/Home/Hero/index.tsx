@@ -35,7 +35,9 @@ export default () => {
           <Link href="/about-me">
             <a>About</a>
           </Link>
-          {/* <a>Blog</a> */}
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
           <Link href="/dev-notes">
             <a>Dev Notes</a>
           </Link>
