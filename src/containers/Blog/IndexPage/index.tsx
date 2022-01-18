@@ -1,5 +1,6 @@
 import { format } from "date-fns"
 import React from "react"
+import Link from "next/link"
 
 import Footer from "components/Footer"
 import StandardHeader from "components/StandardHeader"
@@ -32,9 +33,11 @@ export default function BlogIndexPage({ data }: PropTypes) {
               alt="Cover image"
             />
             <div>
-              <a href={`/blog/${d.slug}`}>
-                <h2>{d.title}</h2>
-              </a>
+              <Link href={`/blog/${d.slug}`}>
+                <a>
+                  <h2>{d.title}</h2>
+                </a>
+              </Link>
               <p className={styles.createdAtDate}>
                 {format(new Date(d.createdAt), "LLLL d, yyyy")}
               </p>
