@@ -9,6 +9,7 @@ import Blog from "containers/Blog"
 type PropTypes = {
   title: string
   description: string
+  image: string
   createdAt: string
   source: any
 }
@@ -20,12 +21,17 @@ const components = {
 export default function BlogData({
   title,
   description,
+  image,
   createdAt,
   source,
 }: PropTypes) {
   return (
     <>
-      <Meta title={title} description={description} />
+      <Meta
+        title={title}
+        description={description}
+        bannerUrl={`https://michaelsalim.co.uk${image}`}
+      />
       <Blog title={title} description={description} createdAt={createdAt}>
         <MDXRemote {...source} components={components} />
       </Blog>
@@ -40,7 +46,7 @@ type RoutePropTypes = {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as RoutePropTypes
   const {
-    data: { title, description, createdAt },
+    data: { title, description, image, createdAt },
     content,
   } = matter(getBlogDataFromSlug(slug))
 
@@ -50,6 +56,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       title,
       description,
+      image,
       createdAt: createdAt.toString(),
       source: mdxSource,
     },

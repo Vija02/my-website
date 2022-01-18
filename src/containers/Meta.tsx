@@ -3,11 +3,13 @@ import Head from "next/head"
 type PropTypes = {
   title?: string
   description?: string
+  bannerUrl?: string
 }
 
 export default ({
   title,
   description = "Get your projects a reality with a few steps. Michael Salim is a Senior Full Stack Freelancer and the creator of the Recall project management software.",
+  bannerUrl = "https://michaelsalim.co.uk/assets/img/social_banner.jpg",
 }: PropTypes) => {
   const finalTitle = !!title
     ? `${title} - Michael Salim | Senior Full Stack Freelancer and Startup Founder`
@@ -46,10 +48,7 @@ export default ({
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={description} />
       <meta name="author" content="Michael Salim" />
-      <meta
-        property="og:image"
-        content="https://michaelsalim.co.uk/assets/img/social_banner.jpg"
-      />
+      <meta property="og:image" content={bannerUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
@@ -57,10 +56,7 @@ export default ({
       <meta name="twitter:site" content="@IamMichaelSalim" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={description} />
-      <meta
-        name="twitter:image"
-        content="https://michaelsalim.co.uk/assets/img/social_banner.jpg"
-      />
+      <meta name="twitter:image" content={bannerUrl} />
     </Head>
   )
 }
