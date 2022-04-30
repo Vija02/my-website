@@ -1,0 +1,238 @@
+---
+title: Rust from 0 to 80% for JavaScript Developers
+description: Learn Rust to 80% in 5 minutes by leveraging your existing JavaScript knowledge. In this article, I list a number of differences Rust has compared to JS that is crucial to understanding it.
+createdAt: 2022-05-01
+image: /assets/blog/rust-from-0-to-80-for-js-dev/rust-from-0-to-80-for-js-dev-banner.jpg
+---
+This is a list of topic that will help you understand [Rust](https://www.rust-lang.org/) quickly if you are a JavaScript developer. There are a lot of tutorial that start from scratch. But if you already know something else, why not compare them?
+
+These are differences that I wished I could refer to before starting Rust, kept short.
+
+**Disclaimer!**
+
+I’m very far from being well versed in Rust. These are how I interpret them and no more than that. Rust’s documentation are vast so if you’re looking for details, please google them instead. [The book is also a good starting point for learning rust](https://doc.rust-lang.org/book/title-page.html). My goal is to list the important things so that you (and me in the future) can skip common programming concepts and focus on the differences based on the knowledge you already know.
+
+## Types
+
+Rust is a typed language so it’s closer to TypeScript. You’ll have a much better experience if you already know TS.
+
+For the most part syntax are similar (**variable_name: Type**) horray!
+
+## snake_case
+
+Yep, no getting around it.
+
+## What’s this symbol?
+
+### 1. Question mark (**?**)
+
+You may see **?** after a function call like so: `my_function()?;`.
+
+No, it’s not optional chaining. [It’s an error handling magic for async functions](https://stackoverflow.com/a/42921174/3101690). More about this later.
+
+[Documentation](https://rust-lang.github.io/async-book/07_workarounds/02_err_in_async_blocks.html)
+
+### 2. Exclamation mark on functions (**!**)
+
+Example: `println!("{:?}", my_variable);`
+
+[This indicates that it’s a macro](https://doc.rust-lang.org/book/ch19-06-macros.html). Basically a shortcut. Just use it if the function example shows it.
+
+### 3. The **&** symbol
+
+Example: `&your_variable`
+
+To get the reference. You’ll know this if you used low level languages like C. More later.
+
+## Syntax
+
+1. Semicolon (**;**) at the end of each line is mandatory
+2. Exception: Semicolon (**;**) is not mandatory on the last line of a function. In this case, [it’s a shortcut for returning that line](https://doc.rust-lang.org/std/keyword.return.html).
+3. [Function syntax is slightly different](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html). Not a big deal.
+
+```rust
+fn foo(num: i32) -> i32 {
+  3 // See no.2
+  // or
+  // return 3;
+}
+```
+
+4. [Decorator syntax also different](https://doc.rust-lang.org/reference/attributes.html). It’s also called **Attributes.**
+
+## What are these keywords?
+
+### struct
+
+It’s a JSON object. (Ok maybe more complicated but see the docs for that)
+
+```tsx
+type Person = {
+	firstName: string
+	lastName: string
+}
+```
+
+```rust
+struct Person {
+	first_name: String
+	last_name: String
+}
+```
+
+### **trait**
+
+[An interface](https://doc.rust-lang.org/book/ch10-02-traits.html?highlight=trait#traits-as-parameters)
+
+### impl
+
+[An implementation of trait](https://doc.rust-lang.org/book/ch10-02-traits.html). So class (?). *I’ve not used it*
+
+### enum
+
+[Quite similar to Typescript enums in a way](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html?highlight=enum#enum-values). But you can store data in it. It’s pretty neat and quite an important concept to understand for async.
+
+## Console.log
+
+Not as easy unfortunately. [More like **printf** from other languages](https://doc.rust-lang.org/std/fmt/index.html)
+
+`println!("{:?}", my_variable);`
+
+## Library/Dependencies
+
+Use `Cargo.toml` instead of `package.json`. [You’ll want to add them manually](https://github.com/rust-lang/cargo/issues/4) (instead of using a command like `yarn add`)
+
+[Documentation](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html)
+
+Example:
+
+```toml
+[dependencies]
+chrono = "0.4"
+egg-mode = "0.16.0"
+```
+
+## Importing
+
+[Rust has modules](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html?highlight=module#defining-modules-to-control-scope-and-privacy). It’s quite different from JS but basically:
+
+They’re sort of like namespaces. Here’s a breakdown on importing a dependency
+
+`use rocket::serde::{json::Json, Deserialize, Serialize};`
+
+**`use`** - use this instead of `import`
+
+`rocket` - this is the package name
+
+`::` - accessing a module
+
+`serde` - the module name
+
+`{json::Json, Deserialize, Serialize}` - things to actually import
+
+Some more syntax:
+
+`use chrono::prelude::*;`
+
+`use rusqlite::Result;`
+
+## Importing from local files
+
+Best explanation: [https://doc.rust-lang.org/rust-by-example/mod/split.html](https://doc.rust-lang.org/rust-by-example/mod/split.html)
+
+Use `mod` to the path/file you want to import to make the compiler include the module.
+
+Then `use` to import it. Note: `mod` automatically imports it too. In this case, you will need prefix it with `crate`. 
+
+Example: 
+```rust
+use crate::your_file_or_module;
+```
+
+Note: `mod.rs` is a special filename which acts like `index.js`
+
+See the link above for examples.
+
+## Const vs let
+
+In JavaScript you’d use **const** most of the time because it’s immutable.
+
+In Rust, you’ll want to use **let** instead. This is immutable by default. If you want it to be mutable, use [mut](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html) keyword. **const** are reserved for actual constants (so you can’t calculate the value from another variable)
+
+```rust
+let immutable_variable = ...;
+let mut mutable_variable = ...;
+const MY_CONSTANT = "CONSTANT";
+```
+
+## Library Documentation
+
+If the Github repo doesn’t link to the documentation page, you can probably get to it like this:
+
+![Untitled](/assets/blog/rust-from-0-to-80-for-js-dev/1.png)
+
+
+![Untitled](/assets/blog/rust-from-0-to-80-for-js-dev/2.png)
+
+## Asynchronous
+
+By far, the 2 most confusing topic are **futures** and **ownership**. I would recommend reading a more comprehensive documentation for these. Let’s talk about futures first.
+
+`Future` is like a `Promise`. Unlike JS, Rust has a type for the result of the promise/future called `Result`. It also accepts the error type on the generics (I wish JS has this).
+
+### Executing (or “consuming”) Future
+
+The standard library is quite barebones so you’ll need to import something else (Think [bluebird](https://github.com/petkaantonov/bluebird) for JS). You need an executor to run a `future`. I recommend using https://github.com/tokio-rs/tokio and reading their documentation.
+
+### `.await` to await a function
+
+`async_function().await;` Interesting syntax, yeah? Actually quite nice since you don’t have to wrap it with brackets like in JS.
+
+### Handling Result
+
+[This is another important one](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html). Rust is safe so you’ll need to handle everything. Yes, all error cases unlike JS!
+
+The `Result` enum has `Ok` and `Err`. If the future is successful, it returns `Ok`, otherwise `Err`.
+
+Most comprehensive way to handle both cases:
+
+```rust
+let f = File::open("hello.txt");
+
+let mut f = match f {
+    Ok(file) => file,
+    Err(e) => return Err(e),
+};
+```
+
+The above uses the [pattern matching syntax which is also great](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html).
+
+This is quite verbose so there are 2 common ways to shorten it:
+
+1. Using `.unwrap()`
+
+Example: `let my_value = async_function().await.unwrap();`
+
+This [gets the success value and panics if Err](https://stackoverflow.com/a/36362163/3101690)
+
+Use this when you’re confident that it won’t error.
+
+2. Using the `?` syntax
+
+This passes the error up. So your function needs to be able to return an error too (either a `Result` or an `Option`)
+
+[See this for example and its equivalent](https://stackoverflow.com/a/42921174/3101690) 
+
+## Ownership & References
+
+Heard of the borrow checker? Nothing much for me to say here. It’s the hardest thing in this list since it’s unique to rust. And if you’ve never handled references before, this topic might be a bit steep.
+
+Thankfully the rust book saves the day once again
+
+[Basically: Read part 4.1, 4.2 and 4.3](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
+
+## And that’s it!
+
+This list is actually shorter than I expected. I hope it’s useful for your journey.
+
+See a mistake or have any suggestions? Let me know!
