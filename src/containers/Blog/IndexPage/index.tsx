@@ -25,7 +25,7 @@ export default function BlogIndexPage({ data }: PropTypes) {
       <div className={styles.container}>
         <h1>Blog</h1>
 
-        {data.map((d) => (
+        {data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).map((d) => (
           <div className={styles.card}>
             <img
               className={styles.coverImage}
