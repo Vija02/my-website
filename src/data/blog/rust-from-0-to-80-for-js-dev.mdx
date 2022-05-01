@@ -4,6 +4,7 @@ description: Learn Rust to 80% in 5 minutes by leveraging your existing JavaScri
 createdAt: 2022-05-01
 image: /assets/blog/rust-from-0-to-80-for-js-dev/rust-from-0-to-80-for-js-dev-banner.jpg
 ---
+
 This is a list of topic that will help you understand [Rust](https://www.rust-lang.org/) quickly if you are a JavaScript developer. There are a lot of tutorial that start from scratch. But if you already know something else, why not compare them?
 
 These are differences that I wished I could refer to before starting Rust, kept short.
@@ -28,7 +29,7 @@ Yep, no getting around it.
 
 You may see **?** after a function call like so: `my_function()?;`.
 
-No, it’s not optional chaining. [It’s an error handling magic for async functions](https://stackoverflow.com/a/42921174/3101690). More about this later.
+No, it’s not optional chaining. [It’s an error handling magic for functions that can fail (fallible functions)](https://stackoverflow.com/a/42921174/3101690). You'll commonly see this when dealing with asynchronous functions. More about this later.
 
 [Documentation](https://rust-lang.github.io/async-book/07_workarounds/02_err_in_async_blocks.html)
 
@@ -36,7 +37,7 @@ No, it’s not optional chaining. [It’s an error handling magic for async func
 
 Example: `println!("{:?}", my_variable);`
 
-[This indicates that it’s a macro](https://doc.rust-lang.org/book/ch19-06-macros.html). Basically a shortcut. Just use it if the function example shows it.
+[This indicates that it’s a macro](https://doc.rust-lang.org/book/ch19-06-macros.html). JS doesn't have anything similar to this. Macros are a way of writing code that writes other code. You can think of it like a custom syntactic sugar. Just use it if the function example shows it.
 
 ### 3. The **&** symbol
 
@@ -68,8 +69,8 @@ It’s a JSON object. (Ok maybe more complicated but see the docs for that)
 
 ```tsx
 type Person = {
-	firstName: string;
-	lastName: string;
+  firstName: string;
+  lastName: string;
 };
 ```
 
@@ -86,7 +87,7 @@ struct Person {
 
 ### impl
 
-[An implementation of trait](https://doc.rust-lang.org/book/ch10-02-traits.html). So class (?). *I’ve not used it*
+[An implementation of trait](https://doc.rust-lang.org/book/ch10-02-traits.html). The closest thing we have to this are classes. It's the link between a `trait` and a type. _I’ve not used it_
 
 ### enum
 
@@ -142,9 +143,10 @@ Best explanation: [https://doc.rust-lang.org/rust-by-example/mod/split.html](htt
 
 Use `mod` to the path/file you want to import to make the compiler include the module.
 
-Then `use` to import it. Note: `mod` automatically imports it too. In this case, you will need prefix it with `crate`. 
+Then `use` to import it. Note: `mod` automatically imports it too. In this case, you will need prefix it with `crate`.
 
-Example: 
+Example:
+
 ```rust
 use crate::your_file_or_module;
 ```
@@ -171,14 +173,13 @@ If the Github repo doesn’t link to the documentation page, you can probably ge
 
 ![Untitled](/assets/blog/rust-from-0-to-80-for-js-dev/1.png)
 
-
 ![Untitled](/assets/blog/rust-from-0-to-80-for-js-dev/2.png)
 
 ## Asynchronous
 
 By far, the 2 most confusing topic are **futures** and **ownership**. I would recommend reading a more comprehensive documentation for these. Let’s talk about futures first.
 
-`Future` is like a `Promise`. Unlike JS, Rust has a type for the result of the promise/future called `Result`. It also accepts the error type on the generics (I wish JS has this).
+`Future` is like a `Promise`. Unlike JS, Rust has a type for the result of the promise/future called `Result`. It also accepts the error type on the generics (I wish JS has this). You can also use `Result` on its own without `future`.
 
 ### Executing (or “consuming”) Future
 
@@ -215,13 +216,13 @@ Example: `let my_value = async_function().await.unwrap();`
 
 This [gets the success value and panics if Err](https://stackoverflow.com/a/36362163/3101690)
 
-Use this when you’re confident that it won’t error.
+Use this only when you’re confident that it won’t error or in test environment.
 
 2. Using the `?` syntax
 
 This passes the error up. So your function needs to be able to return an error too (either a `Result` or an `Option`)
 
-[See this for example and its equivalent](https://stackoverflow.com/a/42921174/3101690) 
+[See this for example and its equivalent](https://stackoverflow.com/a/42921174/3101690)
 
 ## Ownership & References
 
@@ -236,3 +237,9 @@ Thankfully the rust book saves the day once again
 This list is actually shorter than I expected. I hope it’s useful for your journey.
 
 See a mistake or have any suggestions? Let me know!
+
+---- 
+
+Special thanks to everyone that suggested corrections.  
+
+Check out this article in [Hacker News](https://news.ycombinator.com/item?id=31220791)
