@@ -81,23 +81,36 @@
   background-color: #41485e87;
   padding: 5px 15px;
   border: 1px solid white;
+  overflow: auto;
 }
 
 /* DEBT: Figure out a nicer way to do this */
-.content p>code {
+.content p > code {
   background-color: #41485e87;
   padding: 2px 7px;
 }
-.content li>code {
+.content li > code {
   background-color: #41485e87;
   padding: 2px 7px;
 }
-.content h3>code {
+.content h3 > code {
   background-color: #41485e87;
   padding: 2px 7px;
 }
 
 @media (max-width: 400px) {
+  .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .content {
+    margin: 0px;
+    word-break: break-word;
+  }
+  .content p {
+    text-align: start;
+  }
+
   .plugBoxTop {
     flex-direction: column;
   }
