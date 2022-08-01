@@ -21,14 +21,10 @@ export default () => {
       </div>
       <div className={styles.container}>
         <div className={styles.leftContainer}>
-          <h1>MICHAEL</h1>
-          <h1>SALIM</h1>
-          <h2>Full Stack Freelancer</h2>
+          <h1>MICHAEL <br/> SALIM</h1>
+          <h2>Full Stack Developer</h2>
           <h3>
-            I make <u>your product</u> a reality.
-          </h3>
-          <h3>
-            Simply <i>imagine</i> and consider it done.
+            I <i><u>solve problems</u></i> with Software
           </h3>
         </div>
         <div className={styles.rightContainer}>
