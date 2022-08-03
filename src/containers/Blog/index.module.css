@@ -14,7 +14,7 @@
 .container > h1 {
   margin: 0px;
   margin-top: 80px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 
   font-size: 48px;
 }
@@ -23,17 +23,38 @@
   opacity: 0.8;
 }
 
-.container > .socials {
+.container > .author {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 500;
   display: flex;
   align-items: center;
-  font-size: 12px;
-  color: rgb(165, 165, 165);
+  color: rgb(245, 245, 245)
+}
+.container > .author > img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
 }
 
-.container > .socials2 {
+.container > .author > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 16px;
+}
+
+.handle {
+  margin-top: 5px;
+  font-size: 12px;
+  color: rgb(255, 118, 77);
+  text-decoration: none;
+}
+
+.container > .socials {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
