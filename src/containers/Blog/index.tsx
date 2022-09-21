@@ -75,7 +75,7 @@ export default function Blog({
             <div>
               <p>
                 Michael is a full-stack developer and the founder of{" "}
-                <a href="https://recalllab.com">Recall</a>. He loves to make
+                <a href="https://recalllab.com">Recall</a> and <a href="https://dbschemalibrary.com">DbSchemaLibrary</a>. He loves to make
                 things and occasionally write articles like these.
               </p>
               <MailchimpEmbed />
