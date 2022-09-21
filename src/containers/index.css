@@ -4,7 +4,9 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 u {
@@ -41,4 +43,26 @@ u {
   left: 0;
   right: 0;
   z-index: -1;
+}
+
+.blog-table-of-contents {
+  display: inline-block;
+  background-color: rgb(43, 48, 62);
+  padding: 15px 30px;
+}
+
+.blog-table-of-contents span {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.blog-table-of-contents a {
+  text-decoration: none;
+  font-weight: 400 !important;
+}
+
+.blog-table-of-contents a:hover {
+  text-decoration: underline;
 }

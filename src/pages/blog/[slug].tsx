@@ -16,6 +16,20 @@ type PropTypes = {
 
 const components = {
   a: (props: any) => <a target="_blank" rel="noopener" {...props} />,
+  TableOfContents: ({
+    items,
+  }: {
+    items: { anchor: string; text: string }[]
+  }) => (
+    <div className="blog-table-of-contents">
+      <span>Table of Contents</span>
+      {items.map((item) => (
+        <li>
+          <a href={`#${item.anchor}`}>{item.text}</a>
+        </li>
+      ))}
+    </div>
+  ),
 }
 
 export default function BlogData({
