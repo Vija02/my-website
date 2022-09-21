@@ -1,0 +1,245 @@
+---
+title: 300 Signups, No Product, Only Landing page
+description: I got 300 Signups with a simple landing page. No product, no nothing. Here's what happened.
+createdAt: 2022-09-21
+image: /assets/blog/300-signups-no-product-only-landing-page/300-signups-no-product-only-landing-page.jpg
+---
+
+I posted a link on [Hackernews (HN)](https://news.ycombinator.com/) and gained 300 signups within a single week. I will breakdown what happened in this post.
+
+<TableOfContents
+  items={[
+    { anchor: "the-product-idea", text: "The Product Idea" },
+    { anchor: "due-diligence", text: "Due Diligence" },
+    { anchor: "the-mvp", text: "The MVP" },
+    { anchor: "time-to-post", text: "Time To Post" },
+    { anchor: "statistics", text: "Statistics! What actually happened" },
+    { anchor: "overall-statistics", text: "Overall Statistics" },
+    { anchor: "interesting-findings", text: "Interesting findings" },
+    { anchor: "learnings", text: "Learnings" },
+    { anchor: "whats-next", text: "What’s next?" },
+  ]}
+/>
+
+## <a id="the-product-idea" />The Product Idea
+
+The product is [DbSchemaLibrary](https://dbschemalibrary.com). A library of Database Schema.
+
+To be honest, I don’t exactly remember my train of thought when I came up with this. It was a very quick process. I remember some advice: *“Build fast and fail fast”*, *“Test many ideas and eventually one will be a hit”*. I wanted to try it out. In my mind, it will most likely fail but let’s do it anyway. I just finished reading *“The Lean Startup”* book and wanted to put it into practice.
+
+**I don’t enjoy database work**. It's so important. Yet I get sleepy every time I have to work on it. Regardless, it is still something that somebody needs to do. I remembered one instance when this was the case. During that time, I was searching for examples I can reference. Something similar to [Recall](https://recalllab.com) (my other project) that I can copy - or at least use as reference.
+
+I googled a lot. [Probably opened dozens of tabs](https://michaelsalim.co.uk/blog/i-have-218-browser-tabs-open/). There were some results but none of them were useful. I raised my hand and surrender to the fact that I have to power through designing the database myself. 
+
+Somehow that memory surfaced. So I decided to see what I can do about it. 
+
+## <a id="due-diligence" />Due Diligence
+
+*The Lean Startup* book focuses on **getting validated learning**. What’s important is making sure that everything the startup does results in a learning of some sort. Otherwise, I may be building something that nobody wants. That’s exactly what seems to have happened to Recall.
+
+Because of that, I decided to write a document that entails the strategy of the business. This happens before I write a single line of code. What exactly is the problem that I’m solving? What is my proposed solution? What are the leap of faith between the problem and solution? Who would be my target audience?
+
+Here’s the exact note I wrote:
+
+![Note of the exact problem and solutions I’m trying to solve](/assets/blog/300-signups-no-product-only-landing-page/problem_solutions.jpg)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Note of the exact problem and solutions I’m trying to solve
+</p>
+
+This is great because before, I’ve had to do the reverse. This was also easy to write because I didn’t expect the project to go far. I expected this to only be an exercise.
+
+Now following the advice from the book, **I also wrote my expectations.**
+
+*“Failure is a prerequisite to learning. The problem with the notion of shipping a product and then seeing what happens is that you are guaranteed to succeed — at seeing what happens.” —* The Lean Startup book
+
+These are metrics that I would consider a success. The idea is that if I didn’t reach them, I’ll abandon the idea and move on to the next one. At the time, I didn’t have a good understanding of the numbers. So the ones you see below are completely guesswork. But it’s a start!
+
+![Metrics I set before starting anything](/assets/blog/300-signups-no-product-only-landing-page/metrics.jpg)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Metrics I set before starting anything
+</p>
+
+Next, **I also wrote the What and Why of the project.** These are the wording I will use everywhere. Before, I’ve always written a slightly different pitch every time I had to write it. Sometimes I felt certain words will resonate better. Sometimes I thought that the audience may appreciate a different thing. 
+
+This likely works from time to time. The problem is that **I have no idea if it actually is a good idea**. There are no stats, only my judgement at the time of writing. Not only does it take time to write every single time, it’s also likely harmful in some scenarios. Having a copy ready saved me a lot of duplicate work. 
+
+Most importantly, I can also measure the performance and learn from it.
+
+![Copy of the product’s What and Why’s](/assets/blog/300-signups-no-product-only-landing-page/what_why.jpg)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Copy of the product’s What and Why’s
+</p>
+
+Last but not least, I came up with **various community that would want the product**. This became an exercise of how many things I can come up with.
+
+![List of potential marketing channels](/assets/blog/300-signups-no-product-only-landing-page/marketing_channels.jpg)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+List of potential marketing channels
+</p>
+
+
+## <a id="the-mvp" />The MVP
+
+So now it’s time to build.
+
+According to *The Lean Startup*, an MVP is something that can test my assumptions. It is something that the business can get validated learning from. It shouldn’t be of low quality. But it should be the smallest thing that we can learn from. 
+
+I like the example of how Dropbox did theirs. Their assumption was that users will want to use the product if it just works. But how do you test that assumption without building a quality product? They made a video that goes through the software with how it would have worked. Who knows how many of the functionality was actually in place?
+
+So I set out to validate the most crucial assumption I had. That is: **Users are interested in referencing database schema**. How do I test if people actually want to reference another database schema? I know that I’d love to find something like this. But Recall has taught me that just because I want it doesn’t mean that other people feel the same way!
+
+I decided to create a landing page that collects an email. **Just enough to explain what it is. A library that can be used as reference.** Each person that enters their email wants to have something to use as reference. At the very least, they have interest in using the product. There aren’t many other reason why someone would do so.
+
+I skipped the header and footer. There isn’t even a logo nor a name. DbSchemaLibrary is a name a came up with after the fact because I had to write something. The logo is a quick 5 minutes job. Remember, I expected this to be a flop. I poured months of work into Recall only for it to have no users. What could possibly happen to a project where I only spent a day or two?
+
+What I didn’t compromise was anything I need to validate the learning. For example, **how many percentage of people actually sign up from those that visited?** I need to be able to track those results to come to a conclusion.
+
+![Landing page](/assets/blog/300-signups-no-product-only-landing-page/landing_page.png)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Landing page
+</p>
+
+## <a id="time-to-post" />Time To Post
+
+With the work done, it’s time to see if people are actually interested. The next morning, I started going through my channels checklist and posted on each of them. It took more effort than I had thought because I didn’t want to be spammy. 
+
+I tried to made sure that there was at least a single person who would’ve loved to find this product on each channel. I also try to add some value to other people by answering their questions in the channel.
+
+I realized my list is far from good. There are a bunch of channels that wouldn’t be good candidates. The people that the product would be useful don’t hang around there. Posting there would be a waste of both mine and their time. From this, I learned that I need to generate the marketing channels based on the persona I have previously written.
+
+## <a id="statistics" />Statistics! What actually happened
+
+Now on to my favorite part! In total, I posted the link to **23 channels.**
+
+![Results across the marketing channels](/assets/blog/300-signups-no-product-only-landing-page/marketing_stats.jpg)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Results across the marketing channels
+</p>
+
+<hr />
+
+I posted to **11 discord channels**.   
+**11 views** with **3 signups**. **27% conversion**
+
+While the conversion rate is good, I stopped posting to Discord at some point. I actually listed some other channels that I removed since it probably wasn’t a good fit. From the numbers, It’s clear that some users find value from it. But for the majority of users, it’s probably spam.
+
+<hr />
+
+I posted to **6 startup curation website**.   
+**12 views** with **1 signup**. **8% conversion**
+
+I didn’t have much expectation for these. And fair enough, it only got brought 12 views in total. 
+
+<hr />
+
+I posted to **1 subreddit (2 post)**.   
+**13 views** with **3 signups**. **23% conversion**
+
+I didn’t expect much traffic since I posted on a startup subreddit. But it was enough that I’ll probably explore more on Reddit in the future. I didn’t post much there as I have enough data for now. It’s time to focus on the next validated learning
+
+<hr />
+
+I posted to **Indiehacker**.   
+**10 views** with **1 signup**. **10% conversion**
+
+Not much to say about this. The post itself had very little views which explains the low numbers here.
+
+<hr />
+
+### Next are the targeted ones
+
+I posted to **2 slack channels in Toptal**.   
+**68 views** with **15 signups**. **22% conversion**
+
+I’m part of [Toptal](https://topt.al/83cRmZ), a group of pretty decent freelancers. There, they have a slack channel for all members. Most people won’t be able to use this marketing channel but you gotta use everything at your disposal! The number may not seem that much more impressive compared to say discord with 27% conversion. But I’m willing to bet that the quality of users are higher here.
+
+<hr />
+
+I posted to my **Twitter account w/ 38 followers**.   
+**22 views** with **3 signups**. **13% conversion**
+
+Your mileage will vary. I don’t really have a following anywhere so this isn’t something I can leverage.
+
+<hr />
+
+I posted to **Hackernews**.   
+**1966 views** with **196 signups**. **10% conversion**
+
+This is the most successful yet. It’s worth noting that the conversion is at 10%. While other channels might have a higher conversion rate, I believe that 10% is what I’m going to get with more data. That number is also very stable. 
+
+Calculating that number took some effort. Did you know that people use **many different clients** to read HN?
+
+<hr />
+
+### Unknowns
+
+There are a bunch of views and signups that were not trackable. In total, there was about **1136 views** and **135 signups** that doesn’t have any traces. That’s a **11% conversion**. I’m willing to bet that a big chunk of that came from Hackernews.
+
+## <a id="overall-statistics" />Overall Statistics
+
+The site **sign up to visit ratio was 17% over 7 days**. (Each data point is grouped hourly)
+
+![Signup to Views percentage](/assets/blog/300-signups-no-product-only-landing-page/stats_1.png)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Signup to Views percentage
+</p>
+
+![Signup to Views count](/assets/blog/300-signups-no-product-only-landing-page/stats_2.png)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Signup to Views count
+</p>
+
+What’s interesting is that the percentage was lower in the first few days. At first, the percentage hovered at just above 10%. This was when the HN post started to bring in lots of views.
+
+![Percentage of signups to views for the first 2 days](/assets/blog/300-signups-no-product-only-landing-page/stats_3.png)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Percentage of signups to views for the first 2 days
+</p>
+
+Once traffic starts to go down, the percentage is up to a bit under 20%. More people were finding the link because they are specifically interested in it. I also saw 2 traffic from [hn.algolia.com](http://hn.algolia.com). This indicates that people are searching for something similar and finding my post.
+
+![Percentage of signups after the initial traffic](/assets/blog/300-signups-no-product-only-landing-page/stats_4.png)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Percentage of signups after the initial traffic
+</p>
+
+## <a id="interesting-findings" />Interesting findings
+
+### 1. HN post was not doing well until the US wakes up
+
+I posted at around 11am UTC. It had some views during the next hour and died down after. I thought that was the end of that. **7 signups with 13% conversion**. Not great but I definitely would’ve considered my options.
+
+But once it hit 4pm UTC, traffic started to grow again. I realized that 4pm UTC was 9am PDT. The US woke up. At its peak, there was 512 views on 10am PDT.
+
+![Signup to views count during the first few hours](/assets/blog/300-signups-no-product-only-landing-page/stats_5.png)
+<p style={{ textAlign: "center", fontStyle: "italic", marginTop: -10, color: "#9f9f9f" }}>
+Signup to views count during the first few hours
+</p>
+
+### 2. There was a newsletter that featured the product
+
+While aggregating the data, I found that there was some reference to [Revue](https://www.getrevue.co/). It’s a newsletter platform. Presumably, someone posted the link to their newsletter. There was 37 views and 3 signups.
+
+### 3. HN numbers are very consistent
+
+I don’t have a graph showing the conversion over time (yet!). But throughout the day, I checked the numbers and they were very consistent.
+
+- At 2717 views - 272 signups - **10.01%**
+- At 2856 views - 293 signups - **10.25%**
+- At 2965 views - 306 signups - **10.32%**
+
+## <a id="learnings" />Learnings
+
+### 1. My original guesstimate were wayyy off
+
+I had written 30% of conversion at best. Reading some articles, looks like 10% is a good number to aim for.
+
+### 2. Focusing on what matters instead of vanity metric works
+
+*The Lean Startup* warns against focusing on vanity numbers. Metrics that makes you feel good but isn’t useful to measure growth or traction. Focusing on the percentage instead of the total visitor made me realize that there might actually be something here. 
+
+## <a id="whats-next" />What’s next?
+
+There are lots of work to do. Aggregating the data, showing it, building the website, marketing, legal stuff. But this is fun! It’s a great feeling trying to solve a problem instead of trying to find the problem to a solution. 
+
+In the meantime, I've already written the first project update in another post. Continue reading it if you’d like to know more about the project itself! [Shifting from Quantity to Quality - DbSchemaLibrary](https://dbschemalibrary.com/blog/quality-over-quantity)

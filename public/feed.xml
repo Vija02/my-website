@@ -4,11 +4,20 @@
         <title>Michael Salim Blogs</title>
         <link>https://michaelsalim.co.uk/blog/</link>
         <description>This is my personal blog posts</description>
-        <lastBuildDate>Mon, 01 Aug 2022 23:51:45 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Sep 2022 16:54:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2022, Michael Salim</copyright>
+        <item>
+            <title><![CDATA[300 Signups, No Product, Only Landing page]]></title>
+            <link>https://michaelsalim.co.uk/blog/300-signups-no-product-only-landing-page</link>
+            <guid>https://michaelsalim.co.uk/blog/300-signups-no-product-only-landing-page</guid>
+            <pubDate>Wed, 21 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[I got 300 Signups with a simple landing page. No product, no nothing. Here's what happened.]]></description>
+            <author>hi@michaelsalim.co.uk (Michael Salim)</author>
+            <enclosure url="https://michaelsalim.co.uk/assets/blog/300-signups-no-product-only-landing-page/300-signups-no-product-only-landing-page.jpg" length="0" type="image/jpg"/>
+        </item>
         <item>
             <title><![CDATA[I have 218 browser tabs open]]></title>
             <link>https://michaelsalim.co.uk/blog/i-have-218-browser-tabs-open</link>
