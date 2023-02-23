@@ -30,6 +30,12 @@ const components = {
       ))}
     </div>
   ),
+  Video: ({ src }: { src: string }) => (
+    <video autoPlay loop muted style={{ width: "100%" }}>
+      <source src={src} type="video/mp4" />
+      Your browser does not support HTML video.
+    </video>
+  ),
 }
 
 export default function BlogData({
