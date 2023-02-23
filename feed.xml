@@ -4,11 +4,20 @@
         <title>Michael Salim Blogs</title>
         <link>https://michaelsalim.co.uk/blog/</link>
         <description>This is my personal blog posts</description>
-        <lastBuildDate>Wed, 21 Sep 2022 16:55:50 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Feb 2023 23:23:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2022, Michael Salim</copyright>
+        <item>
+            <title><![CDATA[Making YouTube video with React]]></title>
+            <link>https://michaelsalim.co.uk/blog/making-youtube-video-with-react</link>
+            <guid>https://michaelsalim.co.uk/blog/making-youtube-video-with-react</guid>
+            <pubDate>Thu, 23 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[I wanted a good animation for my first YouTube video. But with no experience with tools like After Effects, what can I do? React JS to the rescue!]]></description>
+            <author>hi@michaelsalim.co.uk (Michael Salim)</author>
+            <enclosure url="https://michaelsalim.co.uk/assets/blog/making-youtube-video-with-react/making-youtube-video-with-react.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[300 Signups, No Product, Only Landing page]]></title>
             <link>https://michaelsalim.co.uk/blog/300-signups-no-product-only-landing-page</link>
