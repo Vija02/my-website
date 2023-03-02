@@ -254,7 +254,12 @@ export default function HomeRecallIndex() {
 
   return (
     <div className={styles.container}>
-      <Particles id="tsparticles" init={particlesInit} options={options} />
+      <Particles
+        id="recallparticles"
+        className="tsparticles"
+        init={particlesInit}
+        options={options}
+      />
       <div>
         <h1>
           Get your projects <u>done on time</u> with Recall

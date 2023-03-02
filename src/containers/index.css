@@ -36,7 +36,7 @@ u {
   background-color: rgb(36, 36, 36);
 }
 
-#tsparticles {
+.tsparticles {
   position: absolute;
   top: 0;
   bottom: 0;
