@@ -49,8 +49,10 @@ Honestly, this part could be improved. Between the UI and the interaction, it’
   There’s only so much code that it can produce due to its token limit. You can check the [tokenizer here to see how it calculates the tokens](https://platform.openai.com/tokenizer). It’s not very friendly for code. Below is an example of one of its outputs. Each different color represents a token.
 
   ![Tokenizer](/assets/blog/i-have-a-new-junior-developer/tokenizer.jpg)
-  
+
   Because of this, I have to split the conversion into multiple steps. Otherwise, the generation will stop in the middle. Telling it to continue doesn’t work most of the time. Combined with the points above, this quickly becomes a chore to do.
+
+  ![Continue error](/assets/blog/i-have-a-new-junior-developer/no-continue.jpg)
 
 All in all, the feeling I get is that I don’t want to write English. If I already have to write something, I’d rather directly write code that works.
 
@@ -69,21 +71,21 @@ As you can see, it did the job decently well.
 **The Good**
 
 - **The structure is brought over pretty well**  
-  Other than the details, the HTML structure is quite similar to the original. The spacings are off but the overall layout remains.  
+  Other than the details, the HTML structure is quite similar to the original. The spacings are off but the overall layout remains.
 
 - **The text content doesn't change**  
-  The content itself was handled well. Even though I had to double-check all of them, none of it were changed. The only exception are those derived from JS.  
+  The content itself was handled well. Even though I had to double-check all of them, none of it were changed. The only exception are those derived from JS.
 
 **The Bad**
 
 - **It had random classes**  
-  There are plenty of classes that don't do anything. Some were changed and some others were invalid tailwind classes.  
+  There are plenty of classes that don't do anything. Some were changed and some others were invalid tailwind classes.
 
 - **There are plenty of tiny differences**  
-  The UI looked as if a library was just upgraded and someone forgot to migrate the code. In this case, it’s because ChatGPT randomly changed the values of the classes. For example, a `padding` of 3 to 4, or changing the `font-weight` from bold to normal. The details were all wrong.  
+  The UI looked as if a library was just upgraded and someone forgot to migrate the code. In this case, it’s because ChatGPT randomly changed the values of the classes. For example, a `padding` of 3 to 4, or changing the `font-weight` from bold to normal. The details were all wrong.
 
 - **It doesn’t work half the time**  
-  The screenshots above were those that I can directly compare. In reality, the results were either incomplete or just wrong enough that I had to make many changes to get it to work. And because of that, I can’t compare it side by side. There’s simply nothing I can compare with since the code doesn’t run.  
+  The screenshots above were those that I can directly compare. In reality, the results were either incomplete or just wrong enough that I had to make many changes to get it to work. And because of that, I can’t compare it side by side. There’s simply nothing I can compare with since the code doesn’t run.
 
 ## It’s like reviewing PRs instead of writing code
 
