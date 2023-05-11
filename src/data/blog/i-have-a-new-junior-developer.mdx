@@ -1,0 +1,114 @@
+---
+title: I have a new Junior Developer and it kinda sucks
+description: ChatGPT is all the rage these days. Is it really that good for developers though?
+createdAt: 2023-05-11
+image: /assets/blog/i-have-a-new-junior-developer/i-have-a-new-junior-developer.png
+---
+
+That developer is ChatGPT and I have a love-hate relationship with it.
+
+There are so many articles about AI nowadays so I’ll try to keep this one short.
+
+**TL;DR:**
+
+Using ChatGPT to code is like having a Junior developer under you. They can get the code 80% there but you’ll need to review practically every line.
+
+## The scenario
+
+I have to admit that there are plenty of ways you could use ChatGPT to help write code. It’s probably better at some of them and worse at others.
+
+For example, I’ve heard plenty of people using it as a search engine. I personally find that a bit questionable. It’s not that hard to find documentation or even answers through search. I use [Kagi](https://kagi.com/) which helps to cut down the fluff. On the contrary, using ChatGPT, how are you supposed to know if the answer is true?
+
+On the other side of the spectrum, there are plenty of people using it as a glorified auto-completion. Something like [Github Copilot](https://github.com/features/copilot). I can see that being useful.
+
+The scenario I’ve chosen is:
+
+**Converting my code from [chakra-ui](https://chakra-ui.com/) to [tailwindcss](https://tailwindcss.com/).**
+
+Why?
+
+- There are plenty of resources for both technologies, especially Tailwind (and of course, HTML). It should have plenty of data to work from.
+- It is very possible to create a program to do this. While there may be plenty of edge cases, the functionality itself is straightforward. chakra-ui is inspired by tailwind so it inherits a bunch of things that can be easily transferred.
+- It is something I need to do. So it’s a real use case that someone else might encounter.
+
+## Prompt engineering is a chore
+
+Looking around the field, it seemed like prompting well is the difference between getting good or mediocre results. I’m not the best at this but I did some research and tried my best.
+
+I made sure to use multiple prompts to get it to a good state. Only pasting my code whenever it seems like it knows it should only convert my code.
+
+Honestly, this part could be improved. Between the UI and the interaction, it’s quite a chore to use:
+
+- **It can take some time for it to reach the desired state**  
+  Between me thinking what to write, then waiting for it to respond and finish writing, it gets quite annoying to do this work
+- **It’s inconsistent**  
+  It doesn’t help that you can’t always reuse the same prompts. ChatGPT has some randomness to it so I had to tweak the prompt every single time. Copy-pasting a prompt that worked previously didn’t help.
+- **It’s very easy to get out of the desired state**  
+  The above is fine if it’s a one-time thing. But I found that it’s very easy for the AI to forget everything after the first code conversion. The most repeated success I had was 3 times I believe. Beyond that, it returned completely unrelated things like explaining what my code does.
+- **Token is quite a limiting factor**  
+  There’s only so much code that it can produce due to its token limit. You can check the [tokenizer here to see how it calculates the tokens](https://platform.openai.com/tokenizer). It’s not very friendly for code. Below is an example of one of its outputs. Each different color represents a token.
+
+  ![Tokenizer](/assets/blog/i-have-a-new-junior-developer/tokenizer.jpg)
+  
+  Because of this, I have to split the conversion into multiple steps. Otherwise, the generation will stop in the middle. Telling it to continue doesn’t work most of the time. Combined with the points above, this quickly becomes a chore to do.
+
+All in all, the feeling I get is that I don’t want to write English. If I already have to write something, I’d rather directly write code that works.
+
+I can see prompt engineering being a key skill to have in the future. Similar to how knowing how to search is a key skill in today’s world.
+
+## The output is not too bad
+
+For all the work it took, ChatGPT did output some pretty impressive code. Here’s some comparison between the original and the result:
+
+![Comparison 1](/assets/blog/i-have-a-new-junior-developer/compare-1.jpg)
+
+![Comparison 2](/assets/blog/i-have-a-new-junior-developer/compare-2.jpg)
+
+As you can see, it did the job decently well.
+
+**The Good**
+
+- **The structure is brought over pretty well**  
+  Other than the details, the HTML structure is quite similar to the original. The spacings are off but the overall layout remains.  
+
+- **The text content doesn't change**  
+  The content itself was handled well. Even though I had to double-check all of them, none of it were changed. The only exception are those derived from JS.  
+
+**The Bad**
+
+- **It had random classes**  
+  There are plenty of classes that don't do anything. Some were changed and some others were invalid tailwind classes.  
+
+- **There are plenty of tiny differences**  
+  The UI looked as if a library was just upgraded and someone forgot to migrate the code. In this case, it’s because ChatGPT randomly changed the values of the classes. For example, a `padding` of 3 to 4, or changing the `font-weight` from bold to normal. The details were all wrong.  
+
+- **It doesn’t work half the time**  
+  The screenshots above were those that I can directly compare. In reality, the results were either incomplete or just wrong enough that I had to make many changes to get it to work. And because of that, I can’t compare it side by side. There’s simply nothing I can compare with since the code doesn’t run.  
+
+## It’s like reviewing PRs instead of writing code
+
+What’s great about this is that I have something to work from. Thankfully, the work itself is very straightforward. It’s easy to spot errors. The mapping between the classes from chakra-ui and tailwind is almost one-to-one. It’s only tedious because the syntax is different.
+
+But this approach is more akin to reviewing PRs. I had to scan through the whole code to make sure everything is done correctly.
+
+It looks alright at first glance. But there are many gotchas once you work with it and pay attention closely. It brings this false sense of security which made me a bit frustrated once I found out about all the flaws.
+
+A big part of it is code that is interpolated from other codebases. It doesn’t look terrible but it’s not what I wanted.
+
+There are even some alarming changes like changing the heading from h2 to h1. I can only assume it did this because of the content.
+
+**<u>It felt like a junior developer slapped something together and didn’t test their code</u>**. And now I have to review and fix it without being able to tell them to fix it themselves. And this is awful. I already have my fix of reviewing PRs at work. Now I have to do it too for my own projects? No thanks!
+
+## Hopeful future
+
+While I don’t think it’s anywhere near there yet, I do think AI will be helpful at some point for development in the future. Whether the answer is LLMs, who knows.
+
+**Token limits are constantly increasing**
+
+I’ve held off finishing this article long enough. During that time, there are plenty of announcements of token limit being increased. While I’m not sure if it’s public, paid or whatever, this is great to see.
+
+**Prompting UX should get easier with time**
+
+With ChatGPT plugins and better integration, issues like remembering state & consistency should be improved. Hopefully, that’ll lower the effort needed to get useful output from ChatGPT.
+
+In the meantime, I completed the other half of the migration manually. Was it faster? Well, who knows. It felt about the same. But writing it manually did feel a whole lot better.

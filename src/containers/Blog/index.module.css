@@ -12,9 +12,8 @@
 }
 
 .container > h1 {
-  margin: 0px;
-  margin-top: 80px;
-  margin-bottom: 15px;
+  margin: 80px auto 15px auto;
+  max-width: 700px;
 
   font-size: 48px;
 }
@@ -32,7 +31,7 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-  color: rgb(245, 245, 245)
+  color: rgb(245, 245, 245);
 }
 .container > .author > img {
   border-radius: 100%;
