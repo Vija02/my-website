@@ -38,9 +38,7 @@ export default ({ notesList }: PropTypes) => {
               <h1 key={categoryName}>{categoryName}</h1>
               {notes.map((x, j) => (
                 <p key={i}>
-                  <Link href={`/dev-notes/${categoryName}/${x}`}>
-                    <a>{x}</a>
-                  </Link>
+                  <Link href={`/dev-notes/${categoryName}/${x}`}>{x}</Link>
                 </p>
               ))}
             </div>

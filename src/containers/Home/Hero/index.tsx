@@ -21,25 +21,23 @@ export default () => {
       </div>
       <div className={styles.container}>
         <div className={styles.leftContainer}>
-          <h1>MICHAEL <br/> SALIM</h1>
+          <h1>
+            MICHAEL <br /> SALIM
+          </h1>
           <h2>Full Stack Developer</h2>
           <h3>
-            I <i><u>solve problems</u></i> with Software
+            I{" "}
+            <i>
+              <u>solve problems</u>
+            </i>{" "}
+            with Software
           </h3>
         </div>
         <div className={styles.rightContainer}>
-          <Link href="/about-me">
-            <a>About</a>
-          </Link>
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
-          <Link href="/dev-notes">
-            <a>Dev Notes</a>
-          </Link>
-          <Link href="/contact-me">
-            <a>Contact</a>
-          </Link>
+          <Link href="/about-me">About</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/dev-notes">Dev Notes</Link>
+          <Link href="/contact-me">Contact</Link>
           <div className={styles.socialMedia}>
             <a
               href="https://twitter.com/IamMichaelSalim/"

@@ -271,14 +271,13 @@ export default function HomeRecallIndex() {
         <br />
         <br />
         <br />
-        <Link href="https://recalllab.com?ref=personalhomepage" passHref>
-          <a
-            className={styles.button}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Find our more {">"}
-          </a>
+        <Link
+          href="https://recalllab.com?ref=personalhomepage"
+          className={styles.button}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Find our more{" >"}
         </Link>
       </div>
       <div className={styles.imgContainer}>

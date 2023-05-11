@@ -14,21 +14,11 @@ export default () => {
       <div className={styles.heightPad} />
       <div className={styles.absoluteContainer}>
         <div className={styles.container}>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/about-me">
-            <a>About</a>
-          </Link>
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
-          <Link href="/dev-notes">
-            <a>Dev Notes</a>
-          </Link>
-          <Link href="/contact-me">
-            <a>Contact</a>
-          </Link>
+          <Link href="/">Home</Link>
+          <Link href="/about-me">About</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/dev-notes">Dev Notes</Link>
+          <Link href="/contact-me">Contact</Link>
           <div className={styles.socialMedia}>
             <a
               href="https://twitter.com/IamMichaelSalim/"

@@ -1,14 +1,14 @@
 import React, { useState } from "react"
-import Link from 'next/link'
-import Autosuggest from 'react-autosuggest'
-import fuzzy from 'fuzzy'
+import Link from "next/link"
+import Autosuggest from "react-autosuggest"
+import fuzzy from "fuzzy"
 
 import Button from "components/Button"
 
-import Waves from 'assets/waves.svg'
+import Waves from "assets/waves.svg"
 
-import styles from './index.module.css'
-import theme from './autosuggest.module.css'
+import styles from "./index.module.css"
+import theme from "./autosuggest.module.css"
 
 const suggestionsList = [
   "I want to have an app",
@@ -28,26 +28,31 @@ export default () => {
         <p>Let's have a quick chat!</p>
       </div>
       <div className={styles.form}>
-        <h3>
-          What do you want to talk about?
-        </h3>
+        <h3>What do you want to talk about?</h3>
+        {/* @ts-ignore */}
         <Autosuggest
           suggestions={suggestions}
-          onSuggestionsFetchRequested={({ value }) => setSuggestions(fuzzy.filter(value, suggestionsList).map(x => x.original))}
+          onSuggestionsFetchRequested={({ value }) =>
+            setSuggestions(
+              fuzzy.filter(value, suggestionsList).map((x) => x.original),
+            )
+          }
           onSuggestionsClearRequested={() => setSuggestions([])}
-          getSuggestionValue={x => x}
+          getSuggestionValue={(x) => x}
           renderSuggestion={(suggestion) => <div>{suggestion}</div>}
           inputProps={{
-            placeholder: 'I want a...',
+            placeholder: "I want a...",
             value: text,
-            onChange: (e, { newValue }) => setText(newValue)
+            onChange: (e, { newValue }) => setText(newValue),
           }}
           theme={theme}
         />
-        <Link href={{ pathname: '/contact-me', query: { about: text } }} passHref>
-          <Button>
-            Contact
-          </Button>
+        <Link
+          href={{ pathname: "/contact-me", query: { about: text } }}
+          legacyBehavior
+          passHref
+        >
+          <Button>Contact</Button>
         </Link>
       </div>
       <Waves className={styles.wave} />

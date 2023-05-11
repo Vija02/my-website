@@ -25,26 +25,31 @@ export default function BlogIndexPage({ data }: PropTypes) {
       <div className={styles.container}>
         <h1>Blog</h1>
 
-        {data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).map((d) => (
-          <div className={styles.card}>
-            <img
-              className={styles.coverImage}
-              src={d.image}
-              alt="Cover image"
-            />
-            <div>
-              <Link href={`/blog/${d.slug}`}>
-                <a>
-                  <h2>{d.title}</h2>
-                </a>
-              </Link>
-              <p className={styles.createdAtDate}>
-                {format(new Date(d.createdAt), "LLLL d, yyyy")}
-              </p>
-              <p>{d.description}</p>
+        {data
+          .sort(
+            (a, b) =>
+              new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+          )
+          .map((d) => (
+            <div className={styles.card}>
+              <img
+                className={styles.coverImage}
+                src={d.image}
+                alt="Cover image"
+              />
+              <div>
+                <Link href={`/blog/${d.slug}`} legacyBehavior>
+                  <a>
+                    <h2>{d.title}</h2>
+                  </a>
+                </Link>
+                <p className={styles.createdAtDate}>
+                  {format(new Date(d.createdAt), "LLLL d, yyyy")}
+                </p>
+                <p>{d.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
       <Footer />
     </>

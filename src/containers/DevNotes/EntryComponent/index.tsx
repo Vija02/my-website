@@ -20,9 +20,7 @@ export default ({ category, notes, sectionsData }: PropTypes) => {
     <>
       <StandardHeader />
       <div className={styles.container}>
-        <Link href="/dev-notes">
-          <a>{"< Back to list"}</a>
-        </Link>
+        <Link href="/dev-notes">{"< Back to list"}</Link>
         <div className={styles.header}>
           <h1>{notes}</h1>
           <h2>{category}</h2>
