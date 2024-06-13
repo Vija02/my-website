@@ -4,19 +4,19 @@
         <title>Michael Salim Blogs</title>
         <link>https://michaelsalim.co.uk/blog/</link>
         <description>This is my personal blog posts</description>
-        <lastBuildDate>Thu, 13 Jun 2024 23:07:48 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Jun 2024 23:11:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2022, Michael Salim</copyright>
         <item>
-            <title><![CDATA[The PS3 is a ridiculous machine]]></title>
-            <link>https://michaelsalim.co.uk/blog/the-ps3-is-a-ridiculous-machine</link>
-            <guid>https://michaelsalim.co.uk/blog/the-ps3-is-a-ridiculous-machine</guid>
+            <title><![CDATA[The PS3 was a ridiculous machine]]></title>
+            <link>https://michaelsalim.co.uk/blog/the-ps3-was-a-ridiculous-machine</link>
+            <guid>https://michaelsalim.co.uk/blog/the-ps3-was-a-ridiculous-machine</guid>
             <pubDate>Thu, 13 Jun 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[The computer hardware landscape has changed dramatically over the past decade. What once was full of custom hardware are now consolidating into a few standards. The PS3 was one example of such custom hardware.]]></description>
             <author>hi@michaelsalim.co.uk (Michael Salim)</author>
-            <enclosure url="https://michaelsalim.co.uk/assets/blog/the-ps3-is-a-ridiculous-machine/the-ps3-is-a-ridiculous-machine-banner.png" length="0" type="image/png"/>
+            <enclosure url="https://michaelsalim.co.uk/assets/blog/the-ps3-was-a-ridiculous-machine/the-ps3-was-a-ridiculous-machine-banner.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[I have a new Junior Developer and it kinda sucks]]></title>
