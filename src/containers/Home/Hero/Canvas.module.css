@@ -1,7 +1,7 @@
 .canvas {
   opacity: 0;
   animation: show 4s;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 
