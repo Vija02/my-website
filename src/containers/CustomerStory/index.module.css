@@ -1,0 +1,201 @@
+.outside {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-color: #141518;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  min-height: 80vh;
+  position: relative;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.container > h1 {
+  margin: 0px 0 15px 0;
+  max-width: 900px;
+
+  font-size: 48px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.205);
+  padding-bottom: 15px;
+}
+.container > h2 {
+  margin: 100px 0 15px 0;
+  max-width: 700px;
+
+  color: #f37b70;
+  font-weight: 600;
+}
+
+.content > h2 {
+  margin-top: 1.2em;
+}
+.container > p {
+  margin: 0px;
+  opacity: 0.8;
+}
+
+.partner {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.logo {
+  flex: 1;
+  height: 50px;
+}
+.logo svg {
+  height: 100%;
+}
+.logo img {
+  height: 100%;
+}
+
+.container .author {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  color: rgb(245, 245, 245);
+}
+.container .author > img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.container .author > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 16px;
+}
+
+.handle {
+  margin-top: 5px;
+  font-size: 12px;
+  color: rgb(255, 118, 77);
+  text-decoration: none;
+}
+
+.container > .socials {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: rgb(165, 165, 165);
+}
+
+.content {
+  margin: 0px;
+  margin-bottom: 20px;
+  text-align: left;
+
+  font-size: 16px;
+  line-height: 20.8px;
+
+  color: rgb(236, 236, 236);
+}
+
+.content a:visited {
+  color: inherit;
+}
+
+.content a {
+  color: rgb(236, 236, 236);
+  text-decoration-color: #b0d3ff;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
+  font-weight: bold;
+}
+
+.content img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.content pre {
+  background-color: #41485e87;
+  padding: 5px 15px;
+  border: 1px solid white;
+  overflow: auto;
+}
+
+/* DEBT: Figure out a nicer way to do this */
+.content p > code {
+  background-color: #41485e87;
+  padding: 0px 7px;
+}
+.content li > code {
+  background-color: #41485e87;
+  padding: 0px 7px;
+}
+.content h3 > code {
+  background-color: #41485e87;
+  padding: 0px 7px;
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .content {
+    margin: 0px;
+    word-break: break-word;
+  }
+  .content p {
+    text-align: start;
+  }
+
+  .plugBoxTop {
+    flex-direction: column;
+  }
+  .plugBoxTop img {
+    margin-right: 0px !important;
+    margin-bottom: 30px;
+  }
+}
+
+.plugBox {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  background-color: #121315;
+  border: 1px solid #292a2c;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.plugBoxTop {
+  padding: 30px;
+  display: flex;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+
+  align-items: center;
+}
+
+.plugBoxTop p {
+  margin-top: 0px;
+}
+
+.plugBoxTop a {
+  text-decoration-color: #ee414c;
+  color: white;
+  font-weight: bold;
+}
+
+.plugBox img {
+  height: 160px;
+  margin-right: 25px;
+}
