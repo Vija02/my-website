@@ -29,47 +29,23 @@
 
 .shape1 {
   position: absolute;
-  width: 960px;
-  height: 15rem;
-  top: 10rem;
-  left: -5rem;
+  width: 0px;
+  height: 25rem;
+  top: 7rem;
+  left: 24rem;
+  box-shadow: #4bd5ff 0px 0px 100px 40px;
+  rotate: 42deg;
   animation: swing 8s ease-in-out infinite;
-}
-.shape1::before {
-  position: absolute;
-  content: "";
-  inset: 0;
-  border-bottom-right-radius: 9999px;
-  border-top-left-radius: 9999px;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    color-mix(in srgb, #81c8f8 30%, transparent) 50%,
-    transparent 100%
-  );
-  rotate: -42deg;
 }
 .shape2 {
   position: absolute;
-  width: 960px;
-  height: 15rem;
-  top: 20rem;
-  left: 40rem;
+  width: 0px;
+  height: 25rem;
+  top: 4rem;
+  left: 70rem;
+  box-shadow: #4bd5ff 0px 0px 100px 30px;
+  rotate: 42deg;
   animation: swing 8s ease-in-out infinite;
-}
-.shape2::before {
-  position: absolute;
-  content: "";
-  inset: 0;
-  border-bottom-right-radius: 9999px;
-  border-top-left-radius: 9999px;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    color-mix(in srgb, #81bff8 40%, transparent) 50%,
-    transparent 100%
-  );
-  rotate: -42deg;
 }
 
 .container h1 {
