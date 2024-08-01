@@ -12,6 +12,7 @@ import Footer from "components/Footer"
 
 import styles from "./index.module.css"
 import MailchimpEmbed from "./MailchimpEmbed"
+import HireMe from "components/HireMe"
 
 type PropTypes = {
   title: string
@@ -69,20 +70,22 @@ export default function Blog({
           </TwitterShareButton>
         </div>
 
-        <div className={styles.plugBox}>
+        {/* <div className={styles.plugBox}>
           <div className={styles.plugBoxTop}>
             <img src={"/assets/img/OnlyMeBlob.png"} />
             <div>
               <p>
                 Michael is a full-stack developer and the founder of{" "}
-                <a href="https://recalllab.com">Recall</a> and <a href="https://dbschemalibrary.com">DbSchemaLibrary</a>. He loves to make
-                things and occasionally write articles like these.
+                <a href="https://recalllab.com">Recall</a> and{" "}
+                <a href="https://dbschemalibrary.com">DbSchemaLibrary</a>. He
+                loves to make things and occasionally write articles like these.
               </p>
               <MailchimpEmbed />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
+      <HireMe />
       <Footer />
     </>
   )
