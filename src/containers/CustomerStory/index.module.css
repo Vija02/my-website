@@ -148,6 +148,17 @@
     padding-left: 8px;
     padding-right: 8px;
   }
+
+  .container h1 {
+    font-size: 36px;
+  }
+
+  .partner {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
   .content {
     margin: 0px;
     word-break: break-word;
