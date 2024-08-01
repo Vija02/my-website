@@ -166,47 +166,4 @@
   .content p {
     text-align: start;
   }
-
-  .plugBoxTop {
-    flex-direction: column;
-  }
-  .plugBoxTop img {
-    margin-right: 0px !important;
-    margin-bottom: 30px;
-  }
-}
-
-.plugBox {
-  width: 100%;
-  max-width: 700px;
-  margin: auto;
-  background-color: #121315;
-  border: 1px solid #292a2c;
-  margin-bottom: 20px;
-  border-radius: 4px;
-}
-
-.plugBoxTop {
-  padding: 30px;
-  display: flex;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: left;
-
-  align-items: center;
-}
-
-.plugBoxTop p {
-  margin-top: 0px;
-}
-
-.plugBoxTop a {
-  text-decoration-color: #ee414c;
-  color: white;
-  font-weight: bold;
-}
-
-.plugBox img {
-  height: 160px;
-  margin-right: 25px;
 }

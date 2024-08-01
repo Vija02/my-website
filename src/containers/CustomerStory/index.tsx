@@ -2,6 +2,7 @@ import React from "react"
 
 import StandardHeader from "components/StandardHeader"
 import Footer from "components/Footer"
+import HireMe from "components/HireMe"
 
 import styles from "./index.module.css"
 
@@ -46,23 +47,9 @@ export default function CustomerStory({
           </div>
 
           <div className={styles.content}>{children}</div>
-
-          <div className={styles.plugBox}>
-            <div className={styles.plugBoxTop}>
-              <img src={"/assets/img/OnlyMeBlob.png"} />
-              <div>
-                <p>
-                  Michael is a full-stack developer and the founder of{" "}
-                  <a href="https://recalllab.com">Recall</a> and{" "}
-                  <a href="https://dbschemalibrary.com">DbSchemaLibrary</a>. He
-                  loves to make things and occasionally write articles like
-                  these.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+      <HireMe />
       <Footer />
     </>
   )
