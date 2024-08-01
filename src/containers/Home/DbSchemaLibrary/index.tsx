@@ -27,7 +27,7 @@ export default function HomeDbSchemaLibraryIndex() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Find our more{" >"}
+          Find out more{" >"}
         </Link>
       </div>
       <div className={styles.imgContainer}>
