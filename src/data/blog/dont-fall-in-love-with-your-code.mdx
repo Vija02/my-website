@@ -1,0 +1,152 @@
+---
+title: Don't fall in love without your code
+description: Sometimes the best code is the code you delete. Don't love your code and do what's best for the codebase.
+createdAt: 2024-12-07
+image: /assets/blog/dont-fall-in-love-with-your-code/dont-fall-in-love-with-your-code.png
+---
+
+I just deleted hundreds of lines of code I wrote yesterday and replaced them with 32 lines of new code. This was for a feature for [TheOpenPresenter](https://github.com/Vija02/TheOpenPresenter), used to indicate if an audio is playing.
+
+Every so often, I’d work on a functionality that seems quite straightforward to implement. In this case, I just needed to show this icon when audio is playing.
+
+![sample](/assets/blog/dont-fall-in-love-with-your-code/sample.png)
+
+Simple enough. Each of these is a scene containing multiple plugins. Each plugin has its own property like `isPlaying` . We can merge the values between the plugins, and if the flag is true, we can show the icon.
+
+## Architecting a solution
+
+The main issue is how to access this data. See, we could access the data directly. But each plugin can have its own schema. While some plugins may have a simple **isPlaying** property, some others might need something more complicated to represent its playing status.
+
+Simple, why not allow the plugin to register a callback/function that returns the state? 
+
+This is the same pattern that TheOpenPresenter uses for many of its plugins. And while we’re at it, we can abstract it into a **SceneState** object. So if we ever need any other state, we can add it here. Here’s how it might look like for the plugin:
+
+```tsx
+// The pattern we use for plugins
+serverPluginApi.onPluginDataCreated(pluginName, onPluginDataCreated);
+serverPluginApi.onPluginDataLoaded(pluginName, onPluginDataLoaded);
+serverPluginApi.registerRemoteViewWebComponent(
+  pluginName,
+  remoteWebComponentTag,
+);
+
+// Example of how the new API might look like
+serverPluginApi.registerSceneState(
+  pluginName,
+  (_, rendererData) => {
+    return {
+      audioIsPlaying: !!rendererData.find((x) => x.isPlaying),
+    }
+  },
+);
+```
+
+## Server handling
+
+Notice that the code above is handled on the server. This is because TheOpenPresenter consists of 3 separate components: 
+
+1. The Remote - where this audio indication is shown
+2. The Renderer - plays the audio
+3. The Server - connects the two
+
+Ideally, we should handle this in the frontend (remote) so that we don’t add extra load to the server. However, registering this function can be messy. Our frontend uses a micro-frontend architecture loaded with Web components.
+
+The red area below is a React shell. The green area is loaded through web components and is managed by each plugin. 
+
+![Shell](/assets/blog/dont-fall-in-love-with-your-code/shell.png)
+
+Notice that the audio icon is located on the left side of the shell. How do we provide the function that we need to the shell? We could include a JS function in the web component bundle but that sounds like a mess in the long term.
+
+Handling this on the server seems like the proper way to do this.
+
+## Plumbing the data through
+
+With that decided, it’s time for implementation. There are a few things to do:
+
+1. Create the plugin API 
+2. Provide this data to the frontend
+3. Consume and update the UI
+
+### Implementing
+
+I won’t bore you with the details so here’s an overview. The API was not quite straightforward since our data can be quite confusing. In short: A scene can have multiple plugins. And there can be multiple renderers, each viewing a scene in a different way. So a plugin could have multiple renderers showing it in different ways. But with a bit of data manipulation, problem solved.
+
+**Consuming and updating the UI**
+
+Consuming the value was straightforward. I contemplated using Yjs’s awareness protocol to provide the data since it’s real-time and the framework is already in place. This is how the state is stored. However, including this data from the server is its own problem. So I decided to use GraphQL instead - the protocol we’re using for everything else in the platform.
+
+So all we need to do is call the endpoint, listen to it using GraphQL’s subscription, and show the icon as needed. Done.
+
+**Providing this data to the frontend**
+
+Thankfully, we use [Postgraphile](https://postgraphile.org/) which makes extending the GraphQL schema quite straightforward. We can also make it a subscription simply by adding  `@pgSubscription` to the GraphQL schema. It’ll then watch a topic and update the value whenever we call `pg_notify` on that topic. For example:
+
+```typescript
+await pgPool.query(
+  `select pg_notify('graphql:sceneState:${id}','{}');`,
+  [],
+);
+```
+
+Manipulating the data was annoying but just a bit of patience and it’s done!
+
+The last piece of the puzzle is calling `pg_notify` when we need to.
+
+For this, we can add a listener to the state (Yjs) and call the notify whenever anything changes:
+
+```typescript
+state.observeDeep(async () => {
+  // Call pg_notify here
+});
+```
+
+The only thing left to do is performance improvements. Right now, the function is called for every small change, it’s also updated to the frontend. We can calculate the resulting state and compare if anything changes before pushing the update.
+
+## Better solution
+
+Now this solution certainly works. But I hated that we were listening to every single change. It’s unnecessary and I’m not sure how the performance will scale. Is there any better solution?
+
+So I stepped back for a second and an idea came: **How about we go to the basics and use the data from Yjs?** 
+
+The problem was that each plugin may use different ways to indicate play status. So we needed a way to know how to calculate the resulting state ourselves. But rather than letting the user pass a function, **why not reserve a property that they can use to indicate this?**
+
+Rather than passing a function to calculate the state, each plugin could set the reserved state directly alongside their existing data with properties like `__audioIsPlaying` . They could use this value directly, or they could keep it in sync with their existing properties like so:
+
+```typescript
+const onRendererDataLoaded = (
+  rendererData,
+) => {
+  watchYjs(
+	  // Watch the isPlaying property
+    (x) => x.isPlaying,
+    () => {
+	    // And if it changes, sync the __audioIsPlaying property
+      rendererData.set("__audioIsPlaying", rendererData.get("isPlaying"));
+    },
+  );
+};
+```
+
+## Deleting old code
+
+The new method is brilliant. No extra listener, no extra API, just a simple reserved property.
+
+The cost? Well, I already wrote 95% of the first implementation 🫣
+
+***“It’ll be such a shame to delete this when I’ve worked on it for so long. Everything else is perfect other than this one thing!”** - My mind*
+
+This is not my first time. Not second or third either. This time it was just a few hours of work. The longer it takes to implement, the harder it is to let go. But if we should not get attached to servers, we shouldn’t be attached to the code we write either.
+
+It’s obvious that the second implementation is better. It’s faster, less moving parts, less API surface, and less code to maintain. The [first implementation](https://github.com/Vija02/TheOpenPresenter/commit/485fd2ff4d4dc1fdb1e010da2fe71d9bdc7ca45f) added 289 new lines while the [second implementation](https://github.com/Vija02/TheOpenPresenter/commit/8c72633158debf9dcb54e826e61cb69b31a304e7) only added 32 new lines. 
+
+**What’s the lesson to learn then?**
+
+Well, maybe find the simplest solution first. But sometimes we don’t reach the best solution just by thinking about it. If that’s the case, **don’t love your code and don’t be afraid to throw it away**. And maybe write a blog post so that you get something out of it!
+
+---
+
+If you're read this far, you might want to try [TheOpenPresenter](https://theopenpresenter.com/)! It's an open-source presentation system that lets you control any of your screens remotely. 
+
+Show slideshows, play videos, use as dashboards and many more. The software is still very early in development as you can tell from this post but it's stable enough to use regularly. I personally use it for my meetups every week.
+
+Any questions, do ask. Or feel free to report issues in the [Github repo](https://github.com/Vija02/TheOpenPresenter).
