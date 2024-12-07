@@ -12,7 +12,7 @@ export default () => {
       <div>
         <p className={styles.hireme}>Hire Me!</p>
         <p className={styles.subheading}>
-          Currently looking for a remote contract work
+          Available for a remote contract work
         </p>
         <p className={styles.content}>
           Michael is a full-stack developer and the founder of{" "}
