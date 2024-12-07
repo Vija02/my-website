@@ -107,15 +107,15 @@
 /* DEBT: Figure out a nicer way to do this */
 .content p > code {
   background-color: #41485e87;
-  padding: 2px 7px;
+  padding: 0px 7px;
 }
 .content li > code {
   background-color: #41485e87;
-  padding: 2px 7px;
+  padding: 0px 7px;
 }
 .content h3 > code {
   background-color: #41485e87;
-  padding: 2px 7px;
+  padding: 0px 7px;
 }
 
 @media (max-width: 400px) {
