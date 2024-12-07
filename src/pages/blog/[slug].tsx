@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote"
 import { serialize } from "next-mdx-remote/serialize"
 import Meta from "containers/Meta"
 import Blog from "containers/Blog"
+import rehypeShiki from "@shikijs/rehype"
 
 type PropTypes = {
   title: string
@@ -69,8 +70,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     data: { title, description, image, createdAt },
     content,
   } = matter(getBlogDataFromSlug(slug))
-
-  const mdxSource = await serialize(content)
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [[rehypeShiki, { theme: "one-dark-pro" }]],
+    },
+  })
 
   return {
     props: {
