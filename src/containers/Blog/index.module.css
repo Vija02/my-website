@@ -17,6 +17,10 @@
 
   font-size: 48px;
 }
+
+.content > h2 {
+  margin-top: 1.2em;
+}
 .container > p {
   margin: 0px;
   opacity: 0.8;
@@ -85,10 +89,6 @@
   text-decoration-thickness: 2px;
   text-decoration-skip-ink: none;
   font-weight: bold;
-}
-
-.content p {
-  text-align: justify;
 }
 
 .content img {
