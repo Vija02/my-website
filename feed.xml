@@ -4,13 +4,13 @@
         <title>Michael Salim Blogs</title>
         <link>https://michaelsalim.co.uk/blog/</link>
         <description>This is my personal blog posts</description>
-        <lastBuildDate>Sat, 07 Dec 2024 20:25:08 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Dec 2024 14:16:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2022, Michael Salim</copyright>
         <item>
-            <title><![CDATA[Don't fall in love without your code]]></title>
+            <title><![CDATA[Don't fall in love with your code]]></title>
             <link>https://michaelsalim.co.uk/blog/dont-fall-in-love-with-your-code</link>
             <guid>https://michaelsalim.co.uk/blog/dont-fall-in-love-with-your-code</guid>
             <pubDate>Sat, 07 Dec 2024 00:00:00 GMT</pubDate>
