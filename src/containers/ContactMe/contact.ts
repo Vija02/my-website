@@ -1,4 +1,4 @@
-const webhookUrl = "https://discordapp.com/api/webhooks/723286957651657179/ms7g7-Xa3jK9R3ntlI7lCQwPoraXnK6bcbDjbYlNzlKrXfuqenTrSAq9OTscsocnHTmb"
+const webhookUrl = "https://discord.com/api/webhooks/1327785028943351840/5B5O6syq5TSfNCpDgjOFbrkv-bSs9kW-_iTFfh2pQ0pvzjnJfT3zpDX0Q8u9ALj0kcQN"
 
 type MessageProp = {
   subject: string
